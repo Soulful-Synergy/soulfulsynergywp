@@ -57,6 +57,7 @@ function soulfulsynergy_register_fields() {
             array (
                 'key' => 'service_image',
                 'label' => 'Image',
+                'name'  => 'service_image',
                 'type' => 'image',
                 'instructions' => 'Enter a Square Image to Represent the Service',
                 'required' => 1,
@@ -65,6 +66,7 @@ function soulfulsynergy_register_fields() {
             array (
                 'key' => 'service_short_desc',
                 'label' => 'Short Description',
+                'name'  => 'service_short_desc',
                 'type' => 'text',
                 'required' => 1,
                 'instructions' => 'Enter a Short Description of the Service Here',
@@ -72,6 +74,7 @@ function soulfulsynergy_register_fields() {
             array (
                 'key' => 'service_full_desc',
                 'label' => 'Full Description',
+                'name'  => 'service_full_desc',
                 'type' => 'wysiwyg',
                 'required' => 1,
                 'instructions' => 'Enter the Full Description of the Service Here',
@@ -99,6 +102,7 @@ function soulfulsynergy_register_fields() {
             array (
                 'key' => 'tc_image',
                 'label' => 'Image',
+                'name'  => 'tc_image',
                 'type' => 'image',
                 'instructions' => 'Enter a Square Image To Represent the Training/Course',
                 'required' => 1,
@@ -107,6 +111,7 @@ function soulfulsynergy_register_fields() {
             array (
                 'key' => 'tc_link',
                 'label' => 'Link',
+                'name'  => 'tc_link',
                 'type' => 'link',
                 'instructions' => 'Enter the Link that Can Be Used to Register/Access the Course',
                 'required' => 1,
@@ -114,6 +119,7 @@ function soulfulsynergy_register_fields() {
             array (
                 'key' => 'tc_short_desc',
                 'label' => 'Short Description',
+                'name'  => 'tc_short_desc',
                 'type' => 'text',
                 'required' => 1,
                 'placeholder' => 'Let Me Grab Your Attention...',
@@ -121,6 +127,7 @@ function soulfulsynergy_register_fields() {
             array (
                 'key' => 'tc_full_desc',
                 'label' => 'Full Description',
+                'name'  => 'tc_full_desc',
                 'type' => 'wysiwyg',
                 'required' => 1,
                 'placeholder' => 'In This Course...',
@@ -148,6 +155,7 @@ function soulfulsynergy_register_fields() {
             array (
                 'key' => 'tm_image',
                 'label' => 'Image',
+                'name'  => 'tm_image',
                 'type' => 'image',
                 'instructions' => 'Enter a Square Image to Represent the Team Member',
                 'required' => 1,
@@ -156,6 +164,7 @@ function soulfulsynergy_register_fields() {
             array (
                 'key' => 'tm_title',
                 'label' => 'Title',
+                'name'  => 'tm_title',
                 'type' => 'text',
                 'instructions' => 'Enter Job Title',
                 'required' => 0,
@@ -163,6 +172,7 @@ function soulfulsynergy_register_fields() {
             array (
                 'key' => 'tm_instagram',
                 'label' => 'Instagram Link',
+                'name'  => 'tm_instagram',
                 'type' => 'link',
                 'instructions' => 'Enter Instagram Link',
                 'required' => 0,
@@ -170,6 +180,7 @@ function soulfulsynergy_register_fields() {
             array (
                 'key' => 'tm_facebook',
                 'label' => 'Facebook Link',
+                'name'  => 'tm_facebook',
                 'type' => 'link',
                 'instructions' => 'Enter Facebook Link',
                 'required' => 0,
@@ -177,6 +188,7 @@ function soulfulsynergy_register_fields() {
             array (
                 'key' => 'tm_linkedin',
                 'label' => 'LinkedIn Link',
+                'name'  => 'tm_linkedin',
                 'type' => 'link',
                 'instructions' => 'Enter LinkedIn Link',
                 'required' => 0,
@@ -184,6 +196,7 @@ function soulfulsynergy_register_fields() {
             array (
                 'key' => 'tm_email',
                 'label' => 'Email',
+                'name'  => 'tm_email',
                 'type' => 'email',
                 'instructions' => 'Enter Email',
                 'required' => 0,
@@ -211,6 +224,7 @@ function soulfulsynergy_register_fields() {
             array (
                 'key' => 'awards_image',
                 'label' => 'Image',
+                'name'  => 'awards_image',
                 'type' => 'image',
                 'instructions' => 'Enter an Image for the Award',
                 'required' => 1,
@@ -239,6 +253,7 @@ function soulfulsynergy_register_fields() {
             array (
                 'key' => 'partner_image',
                 'label' => 'Image',
+                'name'  => 'partner_image',
                 'type' => 'image',
                 'instructions' => 'Enter an Image for the Partner',
                 'required' => 1,
