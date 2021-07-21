@@ -105,7 +105,7 @@ const viewPorts = new Map([
     [ VIEW_PORTS.XLARGE, { eq: (n) => n >= 993, cardsVisible: 4 } ],
 ]);
 
-let lastViewPort = VIEW_PORTS.XLARGE;
+let lastViewPort = null;
 const viewPortChange = (n) => !viewPorts.get(lastViewPort).eq(n);
 
 const getNewViewPort = (n) => {
@@ -120,7 +120,7 @@ const getNewViewPort = (n) => {
 // Use Resize Observer to Determine Whether New Breakpoint Was Triggered
 const resizeObserver = new ResizeObserver((entries) => {
     const winSize = entries[0].contentRect.width;
-    if(viewPortChange(winSize)) {
+    if(!lastViewPort || viewPortChange(winSize)) {
         lastViewPort = getNewViewPort(winSize);
         console.log(`New ViewPort: ${lastViewPort}`);
         updateCardsVisible();
