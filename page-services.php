@@ -31,7 +31,9 @@ get_header();
     <div class="services-carousel-cardholder">
         <?php
         $args = array(
-            'post_type' => 'service'
+            'post_type' => 'service',
+            'order_by'  => 'title',
+            'order'     => 'asc'
         );
 
         $the_query = new WP_Query($args);
@@ -131,6 +133,7 @@ resizeObserver.observe(document.querySelector('.services-carousel'));
 
 // Show the First Card Body By Default
 cardBodies[0].classList.remove('hidden');
+cards[0].classList.add('services-card-invert');
 
 // Register Card On-Click Listeners
 cards.forEach((el, cardIndex) => {
