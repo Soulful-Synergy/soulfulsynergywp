@@ -1,5 +1,13 @@
 <?php
 
+function soulfulsynergy_buttons( $buttons ) {
+    array_unshift( $buttons, 'fontselect' ); 
+    array_unshift( $buttons, 'fontsizeselect' ); 
+    return $buttons;
+}
+
+add_filter('mce_buttons', 'soulfulsynergy_buttons');
+
 function soulfulsynergy_custom_enter_title( $input ) {
     $pt = get_post_type();
     switch($pt) {
