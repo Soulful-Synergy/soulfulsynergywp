@@ -141,24 +141,15 @@ function soulfulsynergy_socials_input_cb( $args ) {
         placeholder="https://facebook.com/"
         value="<?php echo isset($options['facebook']) ? $options['facebook'] : '' ?>">
         
-        <label for="<?php echo esc_attr( $args['label_for'] ); ?>_twitter">Twitter</label>
+        <label for="<?php echo esc_attr( $args['label_for'] ); ?>_instagram">Instagram</label>
         <input
         style="display:block!important;margin-bottom:10px!important;"
-        id="<?php echo esc_attr( $args['label_for'] ); ?>_twitter" 
-        name="<?php echo esc_attr( $args['label_for'] ); ?>[twitter]" 
+        id="<?php echo esc_attr( $args['label_for'] ); ?>_instagram" 
+        name="<?php echo esc_attr( $args['label_for'] ); ?>[instagram]" 
         type="url" 
-        placeholder="https://twitter.com"
-        value="<?php echo isset($options['twitter']) ? $options['twitter'] : ''?>">
-
-        <label for="<?php echo esc_attr( $args['label_for'] ); ?>_youtube">YouTube</label>
-        <input
-        style="display:block!important;margin-bottom:10px!important;"
-        id="<?php echo esc_attr( $args['label_for'] ); ?>_youtube" 
-        name="<?php echo esc_attr( $args['label_for'] ); ?>[linkedin]" 
-        type="url" 
-        placeholder="https://youtube.com"
-        value="<?php echo isset($options['youtube']) ? $options['youtube'] : ''?>">
-
+        placeholder="https://instagram.com"
+        value="<?php echo isset($options['instagram']) ? $options['instagram'] : ''?>">
+        
         <label for="<?php echo esc_attr( $args['label_for'] ); ?>_linkedin">LinkedIn</label>
         <input
         style="display:block!important;"

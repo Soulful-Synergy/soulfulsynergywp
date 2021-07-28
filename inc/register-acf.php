@@ -21,6 +21,7 @@ function soulfulsynergy_register_fields() {
         'fields' => array (
             array (
                 'key' => 'testimonial_image',
+                'name' => 'testimonial_image',
                 'label' => 'Image',
                 'type' => 'image',
                 'instructions' => 'Enter a Square Headshot Image',
@@ -29,6 +30,7 @@ function soulfulsynergy_register_fields() {
             ),
             array (
                 'key' => 'testimonial_body',
+                'name' => 'testimonial_body',
                 'label' => 'Testimonial',
                 'type' => 'textarea',
                 'required' => 1,
