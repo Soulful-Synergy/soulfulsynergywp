@@ -124,9 +124,23 @@
         </div>
     </div>
 </footer>
+<div id="mobile-bottom-nav">
+<?php 
+        $tags = get_terms(array( 'taxonomy' => 'pathways', 'hide_empty' => false ));
 
+        if( empty( $tags ) ) {
+            echo "No Pathways Found.";
+        } else {
+            foreach( $tags as $tag ) {
+                ?>
+                <a class="nav-link" href="/pathways/<?php echo $tag->name ?>"><?php echo $tag->name; ?></a>
+                <?php
+            }
+        }
+
+    ?>
+</div>
 <?php wp_footer(); ?>
-
 </body>
 
 </html>

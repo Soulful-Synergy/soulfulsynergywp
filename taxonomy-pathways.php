@@ -6,12 +6,8 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 <div class="services-intro">
     <div class="services-intro-text">
         <h1><?php echo $term->name; ?></h1>
-        <!-- TODO: Make this Verbiage Editable -->
         <p>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-        commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-        penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-        Donec quam felis.
+        <?php echo get_theme_mod(strtolower($term->name).'_verbiage'); ?>
         </p>
     </div>
     <div class="services-intro-image"></div>

@@ -17,7 +17,6 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-
     <?php wp_head(); ?>
 </head>
 
@@ -124,8 +123,23 @@
                         ?>
                     </div>
                 </nav>
+                
             </div>
         </div>
+        <nav id="mobile-nav">
+            <div class="mobile-nav">
+                <?php 
+                $args = array(
+                    'theme_location' => 'main-nav',
+                    'echo'           => false,
+                    'container'      => false,
+                    'items_wrap'     => '%3$s'
+                ); 
+                
+                echo strip_tags(wp_nav_menu( $args ), '<a>' );
+                ?>
+            </div>
+        </nav>
         <div id="header-bottom-bar">
             <span class="header-nav-filler"></span>
             <?php 

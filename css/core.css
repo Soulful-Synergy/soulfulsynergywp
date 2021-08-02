@@ -41,11 +41,11 @@ body {
     min-height: 100vh;
     background: linear-gradient(
         180deg,
-        rgba(6, 159, 96, 0.5) 0%,
-        rgba(6, 159, 96, 0.58) 0%,
-        rgba(6, 159, 96, 0.81) 0.01%,
-        rgba(26, 139, 167, 0.5) 76.03%,
-        rgba(26, 139, 169, 0.5) 76.04%,
+        rgba(4, 85, 51, 1) 0%,
+        rgba(6, 159, 95, 0.9) 0%,
+        rgba(6, 159, 95, 0.8) 0.05%,
+        rgba(6, 102, 126, 0.9) 76.04%,
+        rgba(6, 102, 126, 0.9) 76.04%,
         #1a8ba9 100%
     );
 }
@@ -75,6 +75,7 @@ a svg:hover {
 /* Begin Header */
 
 header {
+    z-index: 99999;
     height: 100%;
     width: 100%;
     position: sticky;
@@ -133,6 +134,10 @@ header #header-top-bar {
     color: white;
 }
 
+main#primary {
+    z-index: 1;
+}
+
 #header-main-bar .nav-link {
     color: white;
     font-weight: 500;
@@ -181,6 +186,32 @@ div#main-nav nav div a {
 div#main-nav nav div a:hover {
     color: var(--green1);
     background-color: white;
+}
+
+nav#mobile-nav {
+    background: grey;
+    visibility: hidden;
+    height: 0px;
+}
+
+nav#mobile-nav,
+nav#mobile-nav.open {
+    -webkit-transition: height 0.75s ease;
+    -moz-transition: height 0.75s ease;
+    -o-transition: height 0.75s ease;
+    transition: height 0.75s ease;
+}
+
+nav#mobile-nav div.mobile-nav {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+
+nav#mobile-nav div.mobile-nav a {
+    padding: 10px;
+    color: #ffffff;
+    border-bottom: 1px solid black;
 }
 
 div#circle-img {
@@ -477,6 +508,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
 }
 
@@ -541,7 +573,7 @@ footer {
 
 .services-body h1 {
     font-size: 3rem;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
@@ -607,44 +639,6 @@ footer {
 /* End Services Page */
 
 @media (max-width: 575px) {
-    /* Begin Header */
-    div#main-nav nav div.main-nav {
-        display: none;
-        padding: 0;
-    }
-
-    div#main-nav nav div.main-nav a,
-    div#header-bottom-bar a.nav-link {
-        padding: 0;
-        font-size: 0.8rem;
-    }
-
-    div#header-bottom-bar {
-        display: none;
-    }
-
-    div#mobile-nav-control {
-        display: flex;
-        flex-flow: column;
-        position: absolute;
-        left: 10px;
-        bottom: 5px;
-        cursor: pointer;
-    }
-
-    div.hamburger-icon {
-        width: 35px;
-        height: 3px;
-        background-color: #ffffff;
-        margin: 3px 0;
-    }
-
-    div#mobile-nav-hamburger {
-        display: block;
-    }
-
-    /* End Header */
-
     /* Begin Footer */
 
     footer div.footer-container {
@@ -687,6 +681,44 @@ footer {
 }
 
 @media (max-width: 768px) {
+    /* Begin Header */
+    div#main-nav nav div.main-nav {
+        display: none;
+        padding: 0;
+    }
+
+    div#main-nav nav div.main-nav a,
+    div#header-bottom-bar a.nav-link {
+        padding: 0;
+        font-size: 0.8rem;
+    }
+
+    div#header-bottom-bar {
+        display: none;
+    }
+
+    div#mobile-nav-control {
+        display: flex;
+        flex-flow: column;
+        position: absolute;
+        right: 10px;
+        top: 90px;
+        cursor: pointer;
+    }
+
+    div.hamburger-icon {
+        width: 35px;
+        height: 3px;
+        background-color: #ffffff;
+        margin: 3px 0;
+    }
+
+    div#mobile-nav-hamburger {
+        display: block;
+    }
+
+    /* End Header */
+
     .services-intro {
         flex-direction: column-reverse;
     }

@@ -1,0 +1,529 @@
+div#mobile-bottom-nav {
+    display: none;
+}
+div#pathways {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    width: 100%;
+    background-color: #1a1e1f;
+    padding: 30px 0;
+}
+div#pathways h1,
+#pathways p {
+    color: #fff;
+    width: 70%;
+    text-align: center;
+    margin: auto;
+}
+#pathways p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+div#pathways .pathways-carousel {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    justify-content: space-around;
+    margin: 20px auto;
+    width: 80%;
+}
+.pathways-carousel .box {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    height: 180px;
+    width: 25%;
+    margin: 0 30px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.45);
+}
+.pathways-carousel .box img {
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 120px;
+    height: 120px;
+}
+.pathways-carousel .box a {
+    font-size: 20px;
+    display: flex;
+    flex-flow: column;
+    color: #fff;
+    margin: auto auto 20px;
+}
+div#services {
+    display: flex;
+    flex-flow: column;
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    padding: 30px 0;
+}
+#services p {
+    margin-top: 20px;
+    font-size: 20px;
+}
+.homepage-services-carousel {
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 50px;
+    margin: 0 auto;
+}
+.homepage-services-carousel .box {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background-color: #1a1e1f;
+    height: 250px;
+    width: 25%;
+    margin: 0 auto;
+    padding: 10px 0;
+    box-shadow: 15px 10px 10px rgba(0, 0, 0, 0.45);
+}
+.homepage-services-carousel .box:hover,
+.pathways-carousel .box:hover {
+    box-shadow: inset 1px 1px 5px #fff;
+    cursor: pointer;
+}
+.homepage-services-carousel .box img {
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 120px;
+    height: 120px;
+}
+.homepage-services-carousel .box a {
+    font-size: 20px;
+    color: #fff;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+.homepage-services-carousel .set {
+    display: none;
+}
+.homepage-services-carousel .set.after {
+    display: flex;
+    flex-flow: row;
+    margin: auto;
+    width: 90%;
+    justify-content: center;
+    justify-content: space-around;
+}
+svg.prev:hover,
+svg.next:hover {
+    background-color: #fff;
+    border-radius: 100%;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+#services button,
+#events button {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto auto;
+    color: #fff;
+    font-size: 15px;
+    border: 2px solid #fff;
+    background-color: #1a1e1f;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+div#impact {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    background-color: #1a1e1f;
+    color: #fff;
+    padding: 20px 0 50px;
+    margin: 20px 0;
+}
+div#impact p {
+    margin-top: 20px;
+    font-size: 20px;
+}
+div#impact ul {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+div#impact li {
+    list-style: none;
+    width: 20%;
+    font-size: 20px;
+}
+div#impact .divider {
+    border-left: 1px solid #fff;
+    height: 100px;
+}
+div#group {
+    display: inline-flex;
+    margin: auto auto 50px;
+}
+div#testimonials {
+    display: inline-block;
+    flex-flow: column;
+    text-align: center;
+    width: 45%;
+    margin: 3% 2% 4% auto;
+}
+div#testimonials h1 {
+    padding: 10px 0 30px;
+}
+.testimonials-carousel {
+    display: inline-flex;
+    flex-flow: row;
+}
+.testimonials-carousel svg.prev {
+    margin: auto;
+}
+.testimonials-carousel svg.next {
+    margin: auto;
+}
+.testimonials-carousel .set {
+    display: none;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0px;
+}
+.testimonials-carousel img {
+    margin-bottom: 20px;
+    border-radius: 100%;
+}
+.testimonials-carousel p {
+    font-size: 20px;
+}
+#group .divider {
+    border-left: 1px solid #000;
+    height: 450px;
+    margin-top: 6%;
+}
+div#events {
+    width: 45%;
+    height: 500px;
+    margin: 3% 2% 4% auto;
+    float: right;
+}
+div#events h1 {
+    text-align: center;
+}
+.event-calendar {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0px 20px 0;
+}
+.event-calendar .box {
+    margin: auto auto 20px;
+    display: inline-flex;
+    justify-content: center;
+    width: 80%;
+    height: auto;
+}
+.event-calendar .box img {
+    margin: auto auto auto 10px;
+    align-items: center;
+}
+.event-calendar .box .info {
+    margin: auto auto auto 10px;
+    width: 100%;
+    text-align: left;
+    align-items: center;
+}
+@media (max-width: 768px) {
+    nav#mobile-nav.open {
+        visibility: visible;
+        height: 235px;
+    }
+
+    nav#mobile-nav div.mobile-nav {
+        visibility: hidden;
+        height: 0px;
+    }
+
+    nav#mobile-nav.open div.mobile-nav {
+        visibility: visible;
+        height: 100%;
+    }
+
+    div#main-nav nav div.main-nav {
+        flex-flow: column;
+        margin: 0 auto;
+        height: 60%;
+    }
+
+    div.hamburger-icon.top {
+        display: none;
+    }
+    div.hamburger-icon.middle {
+        transform: rotate(45deg);
+    }
+    div.hamburger-icon.bottom {
+        transform: rotate(-45deg);
+        margin-top: -6px;
+    }
+
+    div.hamburger-icon {
+        transition-duration: 0.75s;
+        transition-property: transform;
+    }
+
+    div#circle-img {
+        z-index: 1;
+    }
+    div#mobile-bottom-nav {
+        display: flex;
+        height: auto;
+        width: 100%;
+        position: sticky;
+        bottom: 0;
+        margin: 0 auto;
+        background-color: #1a1e1f;
+        text-align: center;
+        align-items: center;
+    }
+    div#mobile-bottom-nav a {
+        display: flex;
+        flex-flow: column;
+        color: #fff;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        font-size: 10px;
+        padding: 10px 0;
+    }
+    div#mobile-bottom-nav a img {
+        padding-bottom: 2px;
+    }
+    .pathways-carousel .box {
+        width: 100%;
+    }
+    .homepage-services-carousel svg.prev {
+        margin: auto auto auto 10px;
+    }
+    .homepage-services-carousel svg.next {
+        margin: auto 10px auto auto;
+    }
+    #services {
+        display: flex;
+        flex-flow: row;
+    }
+    .homepage-services-carousel .set.after {
+        flex-flow: column;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        padding: 10px 0;
+    }
+    .homepage-services-carousel .box {
+        width: 180px;
+        height: 100%;
+        margin: auto auto 30px;
+        border-radius: 2%;
+        box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.45);
+    }
+    #services p {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        margin: auto;
+        padding-bottom: 30px;
+    }
+    div#impact {
+        margin: auto;
+        text-align: center;
+        color: #fff;
+    }
+    div#impact ul {
+        grid-column-gap: 30px;
+        width: 90%;
+    }
+    div#impact li {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        margin: auto;
+    }
+    .testimonials-carousel svg.prev {
+        width: 30px;
+        height: 30px;
+    }
+    .testimonials-carousel svg.next {
+        width: 30px;
+        height: 30px;
+    }
+    .testimonials-carousel img {
+        width: 200px;
+        height: 200px;
+    }
+    div .divider {
+        width: 80%;
+        height: 1px;
+        margin: auto;
+        background-color: #000;
+    }
+}
+
+@media (max-width: 992px) {
+    #pathways,
+    #impact {
+        background-color: #1a1e1f;
+    }
+    #pathways h1,
+    #services h1,
+    #impact h1 {
+        text-decoration: underline;
+    }
+    #pathways h1,
+    #impact h1 {
+        color: #fff;
+    }
+    #pathways h1,
+    #services h1,
+    #impact h1,
+    #testimonials h1,
+    #events h1 {
+        font-size: 20px;
+        padding: 20px 0;
+        margin: auto;
+    }
+    .box a {
+        text-decoration: none;
+        color: #000;
+    }
+    div#pathways .pathways-carousel {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        text-align: center;
+        align-items: center;
+        padding: 10px 0 30px;
+        width: 90%;
+        margin: auto;
+        justify-content: unset;
+    }
+    .pathways-carousel .box {
+        background-color: #fff;
+        margin: auto;
+        height: 100%;
+        width: 80%;
+        padding-bottom: 10px;
+        border-radius: 5px;
+    }
+    .pathways-carousel .box img {
+        margin-top: 10px;
+        width: 70px;
+        height: 70px;
+    }
+    .pathways-carousel .box a {
+        color: #000;
+        margin: 0;
+        font-size: 1rem;
+    }
+    #pathways p {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        margin: auto;
+        padding-bottom: 30px;
+        color: #fff;
+    }
+    div#services {
+        width: 95%;
+    }
+    .homepage-services-carousel .box {
+        height: auto;
+    }
+    .homepage-services-carousel .set.after {
+        flex-flow: row;
+        margin: auto;
+        width: 90%;
+    }
+    div#impact {
+        display: block;
+        margin: auto;
+        text-align: center;
+        color: #fff;
+        padding: 0;
+    }
+    div#impact p {
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        margin: auto;
+        padding-bottom: 30px;
+    }
+    div#impact ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        grid-row-gap: 30px;
+        padding: 10px 0 30px;
+        margin: auto;
+    }
+    div#impact li {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        margin: auto;
+        width: 100%;
+    }
+    div#impact li p {
+        width: 100%;
+    }
+    div#impact .divider {
+        display: none;
+    }
+    div#group {
+        display: block;
+        margin: 0;
+        margin-bottom: 30px;
+    }
+    div#testimonials,
+    div#events {
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
+    .testimonials-carousel {
+        display: flex;
+        flex-flow: row;
+    }
+    .testimonials-carousel .set {
+        width: 70%;
+        margin: auto;
+        text-align: center;
+        padding: 0px 0px 20px;
+        transition: all 1s ease-in-out;
+    }
+    #group .divider {
+        width: 80%;
+        height: 1px;
+        margin: auto;
+        background-color: #000;
+    }
+    .event-calendar .box {
+        background-color: #1a1e1f;
+    }
+    .event-calendar .box .info {
+        color: #fff;
+    }
+}
