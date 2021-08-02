@@ -21,6 +21,8 @@ function soulfulsynergy_custom_enter_title( $input ) {
             return __('Enter Partner Name', 'soulfulsynergy');
         case 'award':
             return __('Enter Award Name', 'soulfulsynergy');
+        case 'event':
+            return __('Enter Event Name', 'soulfulsynergy');
         default:
             return __('Enter Title', 'soulfulsyngery');
     }   

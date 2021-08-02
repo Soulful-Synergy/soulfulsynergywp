@@ -39,9 +39,24 @@
                     'public'        => true,
                     'has_archive'   => false,
                     'supports'      => array('title'),
-                    'menu_icon'     => 'dashicons-welcome-learn-more'
+                    'menu_icon'     => 'dashicons-welcome-learn-more',
+                    'taxonomies'    => array( 'course_cats' )
             )
         );
+
+        register_post_type('event',
+        array(
+            'labels'    => array(
+                'name'              => __('Events', 'soulfulsynergy'),
+                'singular_name'     => __('Event', 'soulfulsynergy'),
+                'add_new_item'      => __('Add New Event', 'soulfulsynergy')
+            ),
+                'public'        => true,
+                'has_archive'   => false,
+                'supports'      => array('title'),
+                'menu_icon'     => 'dashicons-calendar-alt'
+        )
+    );
 
         register_post_type('team_member',
             array(

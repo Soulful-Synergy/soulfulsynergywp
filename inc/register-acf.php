@@ -26,7 +26,6 @@ function soulfulsynergy_register_fields() {
                 'type' => 'image',
                 'instructions' => 'Enter a Square Headshot Image',
                 'required' => 1,
-                // 'default_value' => 'https://via.placeholder.com/50x50' // TODO: Add Deafault Icon Image
             ),
             array (
                 'key' => 'testimonial_body',
@@ -63,7 +62,6 @@ function soulfulsynergy_register_fields() {
                 'type' => 'image',
                 'instructions' => 'Enter a Square Image to Represent the Service',
                 'required' => 1,
-                // 'default_value' => 'https://via.placeholder.com/200x200' // TODO: Add Deafault Icon Image
             ),
             array (
                 'key' => 'service_short_desc',
@@ -108,7 +106,6 @@ function soulfulsynergy_register_fields() {
                 'type' => 'image',
                 'instructions' => 'Enter a Square Image To Represent the Training/Course',
                 'required' => 1,
-                // 'default_value' => 'https://via.placeholder.com/50x50' // TODO: Add Deafault Icon Image
             ),
             array (
                 'key' => 'tc_link',
@@ -116,6 +113,14 @@ function soulfulsynergy_register_fields() {
                 'name'  => 'tc_link',
                 'type' => 'link',
                 'instructions' => 'Enter the Link that Can Be Used to Register/Access the Course',
+                'required' => 1,
+            ),
+            array (
+                'key' => 'tc_price',
+                'label' => 'Price',
+                'name'  => 'tc_price',
+                'type' => 'number',
+                'instructions' => 'Enter the Price of the Course',
                 'required' => 1,
             ),
             array (
@@ -149,6 +154,50 @@ function soulfulsynergy_register_fields() {
         'label_placement' => 'top'
     ));
 
+    // Register Events Fields
+    acf_add_local_field_group(array (
+        'key' => 'events_group',
+        'title' => 'Events Group',
+        'fields' => array (
+            array (
+                'key' => 'event_date',
+                'label' => 'Date',
+                'name'  => 'event_date',
+                'type' => 'date_time_picker',
+                'instructions' => 'Enter the Event\'s Date and Time',
+                'required' => 1,
+            ),
+            array (
+                'key' => 'event_link',
+                'label' => 'Link',
+                'name'  => 'event_link',
+                'type' => 'link',
+                'instructions' => 'Enter the Link that Can Be Used to Register/Access the Event',
+                'required' => 1,
+            ),
+            array (
+                'key' => 'event_short_desc',
+                'label' => 'Short Description',
+                'name'  => 'event_short_desc',
+                'type' => 'text',
+                'required' => 1,
+                'placeholder' => 'Let Me Grab Your Attention...',
+            ),
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'event'
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'label_placement' => 'top'
+    ));
+
     // Register Team Member Fields
     acf_add_local_field_group(array (
         'key' => 'team_members_group',
@@ -161,7 +210,6 @@ function soulfulsynergy_register_fields() {
                 'type' => 'image',
                 'instructions' => 'Enter a Square Image to Represent the Team Member',
                 'required' => 1,
-                // 'default_value' => 'https://via.placeholder.com/50x50' // TODO: Add Deafault Icon Image
             ),
             array (
                 'key' => 'tm_title',
@@ -230,7 +278,6 @@ function soulfulsynergy_register_fields() {
                 'type' => 'image',
                 'instructions' => 'Enter an Image for the Award',
                 'required' => 1,
-                // 'default_value' => 'https://via.placeholder.com/50x50' // TODO: Add Deafault Icon Image
             ),
         ),
         'location' => array (
@@ -259,7 +306,6 @@ function soulfulsynergy_register_fields() {
                 'type' => 'image',
                 'instructions' => 'Enter an Image for the Partner',
                 'required' => 1,
-                // 'default_value' => 'https://via.placeholder.com/50x50' // TODO: Add Deafault Icon Image
             ),
         ),
         'location' => array (
