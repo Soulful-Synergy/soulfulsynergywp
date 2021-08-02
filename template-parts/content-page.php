@@ -17,16 +17,7 @@
 	<?php soulfulsynergy_post_thumbnail(); ?>
 
 	<div class="entry-content">
-		<?php
-		the_content();
-
-		// wp_link_pages(
-		// 	array(
-		// 		'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'soulfulsynergy' ),
-		// 		'after'  => '</div>',
-		// 	)
-		// );
-		?>
+		<?php the_content(); ?>
 	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>
