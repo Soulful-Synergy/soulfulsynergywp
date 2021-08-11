@@ -131,11 +131,14 @@ add_action( 'widgets_init', 'soulfulsynergy_widgets_init' );
 function soulfulsynergy_scripts() {
 	wp_enqueue_style( 'soulfulsynergy-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'soulfulsynergy-core', get_template_directory_uri() . '/css/core.css' );
+	wp_enqueue_style( 'soulfulsynergy-lightbox', get_template_directory_uri() . '/css/lightbox.min.css' );
 	wp_enqueue_style( 'soulfulsynergy-cory', get_template_directory_uri() . '/css/cory.css' );
 	wp_style_add_data( 'soulfulsynergy-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'soulfulsynergy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), SOULFULSYNERGY_VERSION, true );
 	wp_enqueue_script( 'soulfulsynergy-counter', get_template_directory_uri() . '/js/purecounter_vanilla.js', array(), SOULFULSYNERGY_VERSION, true );
+	wp_enqueue_script( 'soulfulsynergy-lightbox', get_template_directory_uri() . '/js/lightbox.min.js', array(), SOULFULSYNERGY_VERSION, true );
+	wp_enqueue_script( 'soulfulsynergy-about', get_template_directory_uri() . '/js/about.js', array(), SOULFULSYNERGY_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

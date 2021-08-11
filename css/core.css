@@ -1,8 +1,11 @@
 /* Begin Globals */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:100,200,300,regular,500,600,700,100italic,200italic,300italic,italic,500italic,600italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Lobster:regular);
 
 html {
     font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -10,6 +13,13 @@ html {
     --green1: #0a7e64;
     --green2: #109977;
     --blue: #1c8aad;
+    --about-white: #f4f4f4;
+    --about-grey: #e9e9e9;
+    --about-btn-green: #1abc9c;
+    --about-btn-hover-green: #16a085;
+    --about-hero-green: #33a26d;
+    --about-section-bg: #4d9e85;
+    --about-award-bg: rgb(43, 47, 49);
 }
 
 *,
@@ -381,6 +391,10 @@ footer {
     justify-content: space-between;
 }
 
+.footer-links-col {
+    margin-right: 20px;
+}
+
 .footer-links a:hover {
     color: var(--green2);
 }
@@ -697,46 +711,473 @@ footer {
 
 /* End Pathways Step Box */
 
+/* Begin About Us Page */
+.scroll-back-btn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #33ad7c;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.25);
+    display: flex; /* or inline-flex */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.scroll-back-btn:hover {
+    transform: scale(1.1);
+    transition: 0.2s all;
+}
+
+/* this will fix/disable the unintended
+horizontal scrolling in the mobile view */
+.main {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+.about-hero {
+    background-image: url('../img/about/sitting-table.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 70vh;
+}
+
+.about-hero-weare,
+.about-hero-soulful,
+.about-hero-subtitle {
+    font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
+    margin: 15px 0 15px 0;
+}
+
+.about-hero-weare {
+    color: var(--about-white);
+    font-size: 4rem;
+    font-weight: 500;
+}
+.about-hero-soulful {
+    color: var(--about-hero-green);
+    font-size: 5.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+.about-hero-subtitle {
+    color: var(--about-white);
+    font-size: 2rem;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.about-hero-btn-holder {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-hero-btn {
+    font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    margin-right: 10px;
+    border: 1px solid var(--about-white);
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--about-white);
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--about-white);
+}
+
+.about-hero-btn:hover {
+    background-color: var(--about-white);
+    color: var(--black);
+    transition: 0.2s all;
+}
+
+.about-hero-btn:active {
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--about-white);
+}
+
+.about-mission {
+    background-color: var(--black);
+    color: var(--about-white);
+    padding: 30px 20px 30px 20px;
+}
+
+.about-mission-text {
+    margin: 50px 200px;
+    font-family: 'Lobster', Arial, Helvetica, sans-serif;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.about-mission-leaves-top,
+.about-mission-leaves-bottom svg {
+    transform: scale(2);
+}
+
+.about-section-header {
+    background-color: black;
+    background: linear-gradient(90deg, #1397bb 0%, #37b356 100%);
+
+    color: var(--about-white);
+    width: 100%;
+}
+
+.about-section-header h1 {
+    font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
+    font-size: 4rem;
+    font-weight: 400;
+    margin: 50px 0 50px 0;
+}
+
+.about-section-header h1 {
+    text-align: center;
+}
+
+.about-history-img {
+    width: 100vw;
+    height: auto;
+    background-color: var(--about-award-bg);
+}
+
+.about-history-img img {
+    width: 100%;
+    height: auto;
+}
+
+.about-award-strip {
+    background: #f0c27b; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #4b1248,
+        #f0c27b
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #4b1248,
+        #f0c27b
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    /* option 2 */
+    background: #c04848; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to left,
+        #480048,
+        #c04848
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to left,
+        #480048,
+        #c04848
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    color: white;
+    padding: 30px 0 30px 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100vw;
+    height: auto;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.about-award-row {
+    margin-bottom: 5px;
+}
+
+.about-history-textarea {
+    background-color: var(--black);
+    color: var(--about-white);
+    font-size: 1.2rem;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 8vh 5vw 8vh 5vw;
+}
+
+.about-history-textarea-leftcol,
+.about-history-textarea-rightcol {
+    max-width: 600px;
+}
+
+.about-history-textarea-leftcol {
+    margin-right: 5vw;
+}
+.about-history-textarea-rightcol {
+    margin-left: 5vw;
+}
+
+.about-history-textarea-leftcol,
+.about-history-textarea-rightcol {
+    text-align: justify;
+    line-height: 150%;
+}
+
+.about-team {
+    background-color: var(--black);
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+}
+
+.about-team-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1100px;
+}
+
+.about-team-profile {
+    background-color: var(--about-grey);
+    color: var(--black);
+    margin: 20px;
+    height: 400px;
+    width: 300px;
+}
+
+.about-team-profile-img {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.about-team-profile-img:hover {
+    cursor: pointer;
+    filter: brightness(0.3);
+}
+
+.about-team-profile-img img {
+    height: 300px;
+    width: auto;
+}
+
+.about-team-profile-textarea {
+    overflow: hidden;
+}
+
+.about-team-profile-textarea-name {
+    margin: 15px 10px 5px 10px;
+    color: var(--green1);
+    font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.about-team-profile-textarea-title {
+    margin: 5px 10px 0 10px;
+}
+
+.photos-single-column {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 40px;
+    background-color: var(--black);
+}
+
+.single-photo img {
+    max-height: 250px;
+    max-width: 80vw;
+    width: auto;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.single-photo img:hover {
+    filter: brightness(0.3);
+}
+
+.prezi-slides {
+    background-color: var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prezi-slides iframe {
+    width: 100%;
+    height: 450px;
+}
+
+.about-partners {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 40px;
+    background-color: white;
+}
+
+.about-partner-logo img {
+    max-height: 150px;
+    max-width: 28vw;
+    width: auto;
+    padding: 20px;
+}
+
+/* End About Us Page */
+
+/* Modals */
+/* For Modals in About Page and (possibly) Farms Page  */
+
+/* for header and .main */
+.dim-blur {
+    filter: brightness(0.5) blur(10px);
+}
+
+/* for body when modal is open */
+.disable-overflow-y {
+    overflow: hidden;
+}
+
+/* for modals */
+.modals {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    background-color: red;
+}
+
+.modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(240, 240, 240);
+    width: 1000px;
+    max-width: 80vw;
+    max-height: 90vh;
+    z-index: 9999;
+    box-sizing: content-box;
+    overflow-y: auto;
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+.modal-header {
+    text-align: center;
+    background-color: var(--black);
+    padding: 10px 0 8px 0;
+}
+
+.modal-header img {
+    max-height: 300px;
+    width: auto;
+}
+
+.modal-body {
+    padding: 30px 60px;
+    background-color: white;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 0 5px 5px;
+}
+
+.modal-buttons button {
+    cursor: pointer;
+    background-color: var(--about-btn-green);
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 5px;
+}
+
+.modal-buttons button:hover {
+    background-color: var(--about-btn-hover-green);
+    transition: 0.1s all;
+}
+
+.modal-buttons button:active {
+    background-color: var(--about-btn-green);
+}
+
+.modal-button-close button {
+    background-color: var(--black);
+    padding: 10px 10px;
+}
+
+/* Helpers */
+.tint-75 {
+    background-color: rgba(0, 0, 0, 0.75);
+    height: 100%;
+    width: 100%;
+}
+
+.flex-center-v {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-center-h {
+    display: flex;
+    align-items: center;
+}
+
+.flex-center-v-h {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+.flex-col {
+    flex-direction: column;
+}
+
+/* for email validation */
+.invalid-email {
+    font-size: 14px;
+    color: rgb(255, 109, 109);
+}
+
+.hidden {
+    display: none;
+}
+
 @media (max-width: 575px) {
-    /* Begin Footer */
-
-    footer div.footer-container {
-        padding: 0;
-        display: flex;
+    /* Begin About Us Page */
+    .about-hero-weare {
+        font-size: 3rem;
     }
 
-    footer div.footer-container div.footer-section {
-        margin: 0 auto;
+    .about-hero-soulful {
+        font-size: 4rem;
     }
 
-    footer div.footer-container div.footer-section:nth-of-type(1) {
-        width: 90%;
+    .about-section-header h1 {
+        font-size: 2.5rem;
     }
-
-    footer div.footer-container div.footer-subscribe p {
-        text-align: center;
-        font-size: 1.25rem;
-    }
-
-    .footer-icons {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .footer-icons .footer-icon {
-        width: 50%;
-        margin: auto;
-    }
-
-    .footer-icons .footer-icon img {
-        margin: 10px auto;
-    }
-
-    .footer-icons .footer-social-icons {
-        margin: 0 auto;
-    }
-
-    /* End Footer */
+    /* End About Us Page */
 }
 
 @media (max-width: 768px) {
@@ -839,6 +1280,65 @@ footer {
         padding-bottom: 20px;
         font-size: 1.2rem;
     }
+
+    /* Begin Footer */
+    footer div.footer-container {
+        padding: 0;
+        display: flex;
+    }
+
+    footer div.footer-container div.footer-section {
+        margin: 20px auto;
+    }
+
+    footer div.footer-container div.footer-section:nth-of-type(1) {
+        width: 90%;
+    }
+
+    footer div.footer-container div.footer-section:nth-of-type(2) {
+        margin: 20px;
+    }
+
+    footer div.footer-container div.footer-subscribe p {
+        text-align: center;
+        font-size: 1.25rem;
+    }
+
+    .footer-icons {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .footer-icons .footer-icon {
+        width: 50%;
+        margin: auto;
+    }
+
+    .footer-icons .footer-icon img {
+        margin: 10px auto;
+    }
+
+    .footer-icons .footer-social-icons {
+        margin: 0 auto;
+    }
+    /* End Footer */
+
+    .about-award-strip {
+        flex-direction: column;
+    }
+
+    .about-award-col:not(:last-of-type)::after {
+        content: '‒‒‒‒‒';
+    }
+
+    .about-history-textarea {
+        flex-direction: column;
+    }
+
+    .about-history-textarea-rightcol {
+        margin-left: 0;
+        margin-top: 30px;
+    }
 }
 
 @media (max-width: 992px) {
@@ -856,6 +1356,9 @@ footer {
     }
     .diagram-boxes-container {
         flex-wrap: wrap;
+    }
+    .about-mission-text {
+        margin: 50px 0px;
     }
 }
 
