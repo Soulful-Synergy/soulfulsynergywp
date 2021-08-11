@@ -27,8 +27,8 @@
             foreach( $tags as $tag ) {
                 ?>
                 <div class="box">
-                    <a class="pathways-links" href="/pathways/<?php echo $tag->name ?>">
-                        <img src="<?php echo get_theme_mod(strtolower($tag->name.'_pathways_images')); ?>" width="70" height="70">
+                    <a class="pathways-links" href="/pathways/<?php echo $tag->slug ?>">
+                        <img src="<?php echo get_theme_mod(strtolower($tag->slug.'_pathways_images')); ?>" width="70" height="70">
                         <?php echo $tag->name; ?>
                     </a>
                 </div>
@@ -62,7 +62,7 @@
         <?php
             $args = array(
                 'post_type' => 'service',
-                'order_by'  => 'title',
+                'orderby'  => 'title',
                 'order'     => 'ASC'
             );
 
