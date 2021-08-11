@@ -21,7 +21,7 @@ get_header();
         <?php
         $args = array(
             'post_type' => 'service',
-            'order_by'  => 'title',
+            'orderby'  => 'title',
             'order'     => 'asc'
         );
 
