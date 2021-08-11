@@ -638,6 +638,65 @@ footer {
 }
 /* End Services Page */
 
+/* Begin Pathways Step Box */
+.diagram-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.diagram-boxes-container {
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.diagram-box-container {
+    max-width: 200px;
+    min-width: 150px;
+    margin: 20px 20px;
+    text-align: center;
+}
+
+.diagram-box {
+    border-radius: 5px;
+    background-color: #1a1e1f;
+    color: white;
+}
+
+.diagram-box-text {
+    font-size: 0.7rem;
+    padding: 10px 20px;
+}
+.diagram-box-subtitle {
+    background-color: #33ad7c;
+    border: 1px solid #33ad7c;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 10px 20px;
+}
+
+.diagram-final-box {
+    font-family: Montserrat, Arial;
+    background-color: #1a1e1f;
+    color: white;
+    max-width: 600px;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 5px;
+    margin: 0 15px 15px 15px;
+}
+
+.diagram-arrow svg {
+    transform: scale(0.6);
+}
+
+/* End Pathways Step Box */
+
 @media (max-width: 575px) {
     /* Begin Footer */
 
@@ -794,6 +853,9 @@ footer {
     .img-container {
         width: 70vw;
         margin-bottom: 40px;
+    }
+    .diagram-boxes-container {
+        flex-wrap: wrap;
     }
 }
 
