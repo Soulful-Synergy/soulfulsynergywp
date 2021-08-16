@@ -80,7 +80,7 @@
                     </span>
                 </a>
             </div>
-            <div id="header-search">
+            <!-- <div id="header-search">
                 <input type="text" id="header-search-bar" />
                 <span class="search-icon header-icon">
                     <svg
@@ -97,7 +97,7 @@
                         ></path>
                     </svg>
                 </span>
-            </div>
+            </div> -->
         </div>
         <div id="header-main-bar">
             <div id="main-nav">
