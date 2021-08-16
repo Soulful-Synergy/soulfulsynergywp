@@ -219,20 +219,32 @@ $metric_four = get_option('soulfulsynergy_metric_4');
         <h1>Upcoming Events</h1>
         <div class="event-calendar">
             <?php
+            $empty = 0;
             for($i = 1; $i < 5; $i++) {
-                $castedDate = strtotime(get_theme_mod("event_".$i."_date"));
+                if(!empty(get_theme_mod("event_".$i."_date")) && !empty(get_theme_mod("event_".$i."_title"))) {
+                    $castedDate = strtotime(get_theme_mod("event_".$i."_date"));
+
+                    ?>
+                    <div class="box">
+                        <div class="event-date">
+                            <span class="event-month"><?php echo date("M", $castedDate); ?></span>
+                            <span class="event-day"><?php echo date("d", $castedDate); ?></span>
+                            <span class="event-time"><?php echo date("h:i A", $castedDate); ?></span>
+                        </div>
+                        <div class="event-meta">
+                            <a href="<?php echo get_theme_mod("event_".$i."_link"); ?>" target="_blank" class="event-title"><?php echo get_theme_mod("event_".$i."_title"); ?></a>
+                            <p class="event-desc"><?php echo get_theme_mod("event_".$i."_description"); ?></p>
+                        </div>
+                    </div>
+                    <?php
+                }else{
+                    $empty++;
+                }
+            }
+
+            if($empty == 4) {
                 ?>
-                <div class="box">
-                    <div class="event-date">
-                        <span class="event-month"><?php echo date("M", $castedDate); ?></span>
-                        <span class="event-day"><?php echo date("d", $castedDate); ?></span>
-                        <span class="event-time"><?php echo date("h:i A", $castedDate); ?></span>
-                    </div>
-                    <div class="event-meta">
-                        <a href="<?php echo get_theme_mod("event_".$i."_link"); ?>" target="_blank" class="event-title"><?php echo get_theme_mod("event_".$i."_title"); ?></a>
-                        <p class="event-desc"><?php echo get_theme_mod("event_".$i."_description"); ?></p>
-                    </div>
-                </div>
+                <p style="text-align: center; margin: 10px auto 20px auto;">No Upcoming Events.</p>
                 <?php
             }
             ?>

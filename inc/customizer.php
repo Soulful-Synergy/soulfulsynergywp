@@ -45,6 +45,34 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 			'label'			=> 'Event '.$i.' Link',
 			'description'	=> ''
 		) );
+
+		$wp_customize->selective_refresh->add_partial(
+			'event_'.$i.'_title',
+			array(
+				'selector' => '.event-calendar .box:nth-of-type('.$i.') .event-meta a',
+			)
+		);
+
+		$wp_customize->selective_refresh->add_partial(
+			'event_'.$i.'_description',
+			array(
+				'selector' => '.event-calendar .box:nth-of-type('.$i.') .event-meta p.event-desc',
+			)
+		);
+
+		$wp_customize->selective_refresh->add_partial(
+			'event_'.$i.'_link',
+			array(
+				'selector' => '.event-calendar .box:nth-of-type('.$i.') .event-meta a',
+			)
+		);
+
+		$wp_customize->selective_refresh->add_partial(
+			'event_'.$i.'_date',
+			array(
+				'selector' => '.event-calendar .box:nth-of-type('.$i.') .event-date',
+			)
+		);
 	}
 
 	$wp_customize->add_setting('event_calendar_link');
@@ -54,6 +82,13 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 		'label'			=> 'All Events Calendar Link',
 		'description'	=> ''
 	) );
+
+	$wp_customize->selective_refresh->add_partial(
+		'event_calendar_link',
+		array(
+			'selector' => '#events a.btn',
+		)
+	);
 
 	// Register Mission Statement Section
 	$wp_customize->add_section('mission', array(
