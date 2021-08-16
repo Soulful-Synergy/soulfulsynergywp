@@ -1,12 +1,12 @@
 <script>
-/// Relevant Variables
+/* Relevant Variables */
 let cardSelected = 1;
 let cardsVisible = 4;
 
 const cards = document.querySelectorAll('.services-carousel-card');
 const cardBodies = document.querySelectorAll('.card-body');
 
-// Setup ViewPorts
+/* Setup ViewPorts */
 const VIEW_PORTS = {
     XSMALL: 'xsmall',
     SMALL: 'small',
@@ -34,7 +34,7 @@ const getNewViewPort = (n) => {
     }
 };
 
-// Use Resize Observer to Determine Whether New Breakpoint Was Triggered
+/* Use Resize Observer to Determine Whether New Breakpoint Was Triggered */
 const resizeObserver = new ResizeObserver((entries) => {
     const winSize = document.querySelector('.services-carousel').clientWidth;
     if (!lastViewPort || viewPortChange(winSize)) {
@@ -46,24 +46,24 @@ const resizeObserver = new ResizeObserver((entries) => {
 
 resizeObserver.observe(document.querySelector('.services-carousel'));
 
-// Show the First Card Body By Default
+/* Show the First Card Body By Default */
 cardBodies[0].classList.remove('hidden');
 cards[0].classList.add('services-card-invert');
 
-// Register Card On-Click Listeners
+/* Register Card On-Click Listeners */
 cards.forEach((el, cardIndex) => {
     el.addEventListener('click', (e) => {
         cards.forEach((otherEl) => {
             otherEl.classList.remove('services-card-invert');
         });
 
-        // Updated the currently selected card id
+        /* Updated the currently selected card id */
         let cardSelected = getCardNum(el);
 
-        // invert the card on the page to show that it is selected
+        /* invert the card on the page to show that it is selected */
         el.classList.add('services-card-invert');
 
-        // display the appropriate body article for the card
+        /* display the appropriate body article for the card */
         cardBodies.forEach((bodyEl, bodyIndex) => {
             if (!bodyEl.classList.contains('hidden')) {
                 bodyEl.classList.add('hidden');
@@ -96,10 +96,10 @@ function updateCardsVisible() {
         );
     }
 
-    // make sure that the there is consistency in the amount of cards visible
-    // as the user resizes the window. e.g. if card-8 of 8 cards was the last
-    // selected card when only 2 cards are visible, when the user resizes the
-    // window to show 4 cards, the previous two cards will also be visible.
+    /* make sure that the there is consistency in the amount of cards visible
+       as the user resizes the window. e.g. if card-8 of 8 cards was the last
+       selected card when only 2 cards are visible, when the user resizes the
+       window to show 4 cards, the previous two cards will also be visible. */
     if (cardSelected + cardsVisible > cards.length + 1) {
         cardSelected = cards.length - cardsVisible + 1;
     }
@@ -121,8 +121,6 @@ function updateCardsVisible() {
         }
     });
 }
-
-// functionality for the left and right carousel buttons
 
 const leftBtn = document.querySelector('.services-carousel-btn-left');
 const rightBtn = document.querySelector('.services-carousel-btn-right');
