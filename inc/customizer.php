@@ -11,6 +11,49 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function soulfulsynergy_customize_register( $wp_customize ) {
+	// Register Events Settings
+	for($i = 1; $i < 5; $i++) {
+		$wp_customize->add_setting('event_'.$i.'_title');
+		$wp_customize->add_setting('event_'.$i.'_date');
+		$wp_customize->add_setting('event_'.$i.'_description');
+		$wp_customize->add_setting('event_'.$i.'_link');
+
+		$wp_customize->add_control( 'event_'.$i.'_title', array( 
+			'type'			=> 'text',
+			'section'		=> 'static_front_page',
+			'label'			=> 'Event '.$i.' Title',
+			'description'	=> ''
+		) );
+
+		$wp_customize->add_control( 'event_'.$i.'_description', array( 
+			'type'			=> 'textarea',
+			'section'		=> 'static_front_page',
+			'label'			=> 'Event '.$i.' Description',
+			'description'	=> ''
+		) );
+
+		$wp_customize->add_control( 'event_'.$i.'_date', array( 
+			'type'			=> 'datetime-local',
+			'section'		=> 'static_front_page',
+			'label'			=> 'Event '.$i.' Date',
+			'description'	=> ''
+		) );
+
+		$wp_customize->add_control( 'event_'.$i.'_link', array( 
+			'type'			=> 'url',
+			'section'		=> 'static_front_page',
+			'label'			=> 'Event '.$i.' Link',
+			'description'	=> ''
+		) );
+	}
+
+	$wp_customize->add_setting('event_calendar_link');
+	$wp_customize->add_control( 'event_calendar_link', array( 
+		'type'			=> 'url',
+		'section'		=> 'static_front_page',
+		'label'			=> 'All Events Calendar Link',
+		'description'	=> ''
+	) );
 
 	// Register Mission Statement Section
 	$wp_customize->add_section('mission', array(
@@ -118,7 +161,119 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 		'label'			=> 'Government Verbiage',
 		'description'	=> ''
 	 ) );
+	
+	// About Section
+	$wp_customize->add_section('about', array(
+		'title'			=> 'About Page',
+		'description'	=> '',
+		'priority'		=> '120',
+	));
 
+	$wp_customize->add_setting( 'about_subtitle', array( 
+		'capability'	=> 'edit_theme_options',
+		'default'		=> '',
+	 ) );
+
+	 $wp_customize->add_control( 'about_subtitle', array( 
+		'type'			=> 'text',
+		'section'		=> 'about',
+		'label'			=> 'About Subtitle',
+		'description'	=> ''
+	 ) );
+
+	 $wp_customize->add_setting( 'our_history_left', array( 
+		'capability'	=> 'edit_theme_options',
+		'default'		=> '',
+		'sanitize_callback'	=> 'sanitize_textarea_field',
+	 ) );
+
+	 $wp_customize->add_control( 'our_history_left', array( 
+		'type'			=> 'textarea',
+		'section'		=> 'about',
+		'label'			=> 'History Statement (Left Col)',
+		'description'	=> ''
+	 ) );
+
+	 $wp_customize->add_setting( 'our_history_right', array( 
+		'capability'	=> 'edit_theme_options',
+		'default'		=> '',
+		'sanitize_callback'	=> 'sanitize_textarea_field',
+	 ) );
+
+	 $wp_customize->add_control( 'our_history_right', array( 
+		'type'			=> 'textarea',
+		'section'		=> 'about',
+		'label'			=> 'History Statement (Right Col)',
+		'description'	=> ''
+	 ) );
+
+	 $wp_customize->add_setting('history_image');
+
+	 $wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'history_image', array(
+		 'label'	=> 'Upload History Banner Image',
+		 'section'	=> 'about',
+		 'settings'	=> 'history_image'
+	 ) ));
+
+	 $wp_customize->add_setting('about_infographic');
+
+	 $wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'about_infographic', array(
+		 'label'	=> 'Upload Infographic',
+		 'section'	=> 'about',
+		 'settings'	=> 'about_infographic'
+	 ) ));
+
+	 $wp_customize->add_setting( 'about_prezi', array( 
+		'capability'	=> 'edit_theme_options',
+		'default'		=> '',
+	 ) );
+	 
+	 $wp_customize->add_control( 'about_prezi', array( 
+		'type'			=> 'url',
+		'section'		=> 'about',
+		'label'			=> 'Prezi Embed Link',
+		'description'	=> ''
+	 ) );
+
+	 for($i = 1; $i < 7; $i++) {
+		$wp_customize->add_setting('about_image_'.$i);
+
+		$wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'about_image_'.$i, array(
+			'label'		=> 'Upload About Image '.$i,
+			'section'	=> 'about',
+			'settings'	=> 'about_image_'.$i
+		) ));
+	 }
+
+	// Awards Banners
+	$wp_customize->add_section('awards', array(
+		'title'			=> 'Awards',
+		'description'	=> '',
+		'priority'		=> '120',
+	));
+	
+	for($i = 1; $i < 5; $i++) {
+		for($k = 1; $k < 4; $k++) {
+			for($j = 1; $j < 3; $j++) {
+				$wp_customize->add_setting('award_'.$i.'_row'.$j.'_col'.$k);
+				$wp_customize->add_control( 'award_'.$i.'_row'.$j.'_col'.$k, array( 
+					'type'			=> 'text',
+					'section'		=> 'awards',
+					'label'			=> 'Award Banner '.$i.' Row '.$j.' Col '.$k,
+					'description'	=> ''
+				) );
+				
+				$wp_customize->selective_refresh->add_partial(
+					'award_'.$i.'_row'.$j.'_col'.$k,
+					array(
+						'selector'        => '#award-strip-'.$i.' .about-award-col:nth-of-type('.$k.') .about-award-row:nth-of-type('.$j.')',
+						'render_callback' => 'soulfulsynergy_customize_partial_blogname',
+					)
+				);
+			}
+		}
+		
+	}
 
 	// Underscores Code
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
@@ -140,9 +295,112 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 				'render_callback' => 'soulfulsynergy_customize_partial_blogdescription',
 			)
 		);
+
+		// Added Selective Refreshes
+		$wp_customize->selective_refresh->add_partial('about_subtitle',
+		array(
+				'selector'			=> '.about-hero-subtitle',
+				'render_callback'	=> 'soulfulsynergy_customize_partial_about_subtitle',
+			)
+		);
+
+		$wp_customize->selective_refresh->add_partial('mission_statement',
+		array(
+				'selector'			=> '.about-mission-text',
+				'render_callback'	=> 'soulfulsynergy_customize_partial_missionstatement',
+			)
+		);
+
+		$wp_customize->selective_refresh->add_partial('about_infographic',
+		array(
+				'selector'			=> 'img#about-infographic',
+				'render_callback'	=> 'soulfulsynergy_customize_partial_info_image',
+			)
+		);
+
+		$wp_customize->selective_refresh->add_partial('history_image',
+		array(
+				'selector'			=> '.about-history-img img',
+				'render_callback'	=> 'soulfulsynergy_customize_partial_history_image',
+			)
+		);
+
+		$wp_customize->selective_refresh->add_partial('our_history_left',
+		array(
+				'selector'			=> '.about-history-textarea-leftcol',
+				'render_callback'	=> 'soulfulsynergy_customize_partial_history_left',
+			)
+		);
+
+		$wp_customize->selective_refresh->add_partial('our_history_right',
+		array(
+				'selector'			=> '.about-history-textarea-rightcol',
+				'render_callback'	=> 'soulfulsynergy_customize_partial_history_right',
+			)
+		);
+
+		for($i = 1; $i < 7; $i++) {
+			$selector = $i > 3 ? 2 : 1;
+			$wp_customize->selective_refresh->add_partial('about_image_'.$i,
+			array(
+					'selector'			=> '#about-photo-'.$i.' a img',
+					'render_callback'	=> 'soulfulsynergy_customize_partial_image_'.$i,
+				)
+			);
+		 }
 	}
 }
 add_action( 'customize_register', 'soulfulsynergy_customize_register' );
+
+function soulfulsynergy_customize_partial_about_subtitle() {
+	get_theme_mod('about_subtitle');
+}
+
+function soulfulsynergy_customize_partial_missionstatement() {
+	get_theme_mod('mission_statement');
+}
+
+function soulfulsynergy_customize_partial_info_image() {
+	get_theme_mod('about_infographic');
+}
+
+function soulfulsynergy_customize_partial_history_image() {
+	get_theme_mod('history_image');
+}
+
+function soulfulsynergy_customize_partial_history_left() {
+	get_theme_mod('our_history_left');
+}
+
+function soulfulsynergy_customize_partial_history_right() {
+	get_theme_mod('our_history_right');
+}
+
+function soulfulsynergy_customize_partial_image_1() {
+	get_theme_mod('about_image_1');
+}
+
+function soulfulsynergy_customize_partial_image_2() {
+	get_theme_mod('about_image_2');
+}
+
+function soulfulsynergy_customize_partial_image_3() {
+	get_theme_mod('about_image_3');
+}
+
+function soulfulsynergy_customize_partial_image_4() {
+	get_theme_mod('about_image_4');
+}
+
+function soulfulsynergy_customize_partial_image_5() {
+	get_theme_mod('about_image_5');
+}
+
+function soulfulsynergy_customize_partial_image_6() {
+	get_theme_mod('about_image_6');
+}
+
+
 
 /**
  * Render the site title for the selective refresh partial.
@@ -152,6 +410,7 @@ add_action( 'customize_register', 'soulfulsynergy_customize_register' );
 function soulfulsynergy_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
+
 
 /**
  * Render the site tagline for the selective refresh partial.

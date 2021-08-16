@@ -61,7 +61,7 @@ const modals_container = document.querySelector('.modals-container');
 const modals = document.querySelectorAll('.modal');
 const team = document.querySelectorAll('.about-team-profile');
 
-const modalOpen = false;
+let modalOpen = false;
 
 document.querySelectorAll('.modal-button-close button').forEach((exitBtn) => {
     exitBtn.addEventListener('click', (e) => {

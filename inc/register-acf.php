@@ -154,50 +154,6 @@ function soulfulsynergy_register_fields() {
         'label_placement' => 'top'
     ));
 
-    // Register Events Fields
-    acf_add_local_field_group(array (
-        'key' => 'events_group',
-        'title' => 'Events Group',
-        'fields' => array (
-            array (
-                'key' => 'event_date',
-                'label' => 'Date',
-                'name'  => 'event_date',
-                'type' => 'date_time_picker',
-                'instructions' => 'Enter the Event\'s Date and Time',
-                'required' => 1,
-            ),
-            array (
-                'key' => 'event_link',
-                'label' => 'Link',
-                'name'  => 'event_link',
-                'type' => 'link',
-                'instructions' => 'Enter the Link that Can Be Used to Register/Access the Event',
-                'required' => 1,
-            ),
-            array (
-                'key' => 'event_short_desc',
-                'label' => 'Short Description',
-                'name'  => 'event_short_desc',
-                'type' => 'text',
-                'required' => 1,
-                'placeholder' => 'Let Me Grab Your Attention...',
-            ),
-        ),
-        'location' => array (
-            array (
-                array (
-                    'param' => 'post_type',
-                    'operator' => '==',
-                    'value' => 'event'
-                ),
-            ),
-        ),
-        'menu_order' => 0,
-        'position' => 'normal',
-        'label_placement' => 'top'
-    ));
-
     // Register Team Member Fields
     acf_add_local_field_group(array (
         'key' => 'team_members_group',
@@ -217,7 +173,15 @@ function soulfulsynergy_register_fields() {
                 'name'  => 'tm_title',
                 'type' => 'text',
                 'instructions' => 'Enter Job Title',
-                'required' => 0,
+                'required' => 1,
+            ),
+            array (
+                'key' => 'tm_bio',
+                'label' => 'Bio',
+                'name' => 'tm_bio',
+                'type' => 'wysiwyg',
+                'instructions' => 'Enter a Short Bio',
+                'required' => 1
             ),
             array (
                 'key' => 'tm_instagram',
@@ -266,34 +230,6 @@ function soulfulsynergy_register_fields() {
         'label_placement' => 'top'
     ));
 
-    // Register Awards Fields
-    acf_add_local_field_group(array (
-        'key' => 'awards_group',
-        'title' => 'Awards Group',
-        'fields' => array (
-            array (
-                'key' => 'awards_image',
-                'label' => 'Image',
-                'name'  => 'awards_image',
-                'type' => 'image',
-                'instructions' => 'Enter an Image for the Award',
-                'required' => 1,
-            ),
-        ),
-        'location' => array (
-            array (
-                array (
-                    'param' => 'post_type',
-                    'operator' => '==',
-                    'value' => 'award'
-                ),
-            ),
-        ),
-        'menu_order' => 0,
-        'position' => 'normal',
-        'label_placement' => 'top'
-    ));
-
     // Register Partners Fields
     acf_add_local_field_group(array (
         'key' => 'partners_group',
@@ -305,6 +241,14 @@ function soulfulsynergy_register_fields() {
                 'name'  => 'partner_image',
                 'type' => 'image',
                 'instructions' => 'Enter an Image for the Partner',
+                'required' => 1,
+            ),
+            array (
+                'key' => 'partner_link',
+                'label' => 'Link',
+                'name'  => 'partner_link',
+                'type' => 'url',
+                'instructions' => 'Enter a Link to the Partner\s Website',
                 'required' => 1,
             ),
         ),

@@ -17,7 +17,7 @@
 <div id="pathways">
     <h1>We Help Serve</h1>
     <p>We strive to reach as many people in our community by catering to the specific needs of different entitites. Select a pathway below to learn more about how we serve every individual.</p>
-    <div class = "pathways-carousel">
+    <div class="pathways-carousel">
     <?php 
         $tags = get_terms(array( 'taxonomy' => 'pathways', 'hide_empty' => false ));
 
@@ -47,7 +47,7 @@
     <p>Here are a few of the services we provide at Soulful Synergy. Click on the icons to find out more or select See More to visit our Services Page.</p>
     <div class="homepage-services-carousel">
         <svg
-            class = "prev"
+            class="prev"
             width="40"
             height="40"
             viewBox="0 0 50 50"
@@ -105,7 +105,7 @@
             wp_reset_postdata();
         ?>
         <svg
-            class = "next"
+            class="next"
             width="40"
             height="40"
             viewBox="0 0 50 50"
@@ -118,7 +118,7 @@
             />
         </svg>
     </div>
-    <button>See More</button>
+    <a href="/services" class="btn">See More</a>
 </div>
 
 <!-- Metrics -->
@@ -165,7 +165,7 @@ $metric_four = get_option('soulfulsynergy_metric_4');
         <h1>What Our Clients Are Saying</h1>
         <div class="testimonials-carousel">
         <svg
-            class = "prev" 
+            class="prev" 
             width="40"
             height="40"
             viewBox="0 0 50 50"
@@ -198,7 +198,7 @@ $metric_four = get_option('soulfulsynergy_metric_4');
             wp_reset_postdata();
         ?>
             <svg
-                class = "next"
+                class="next"
                 width="40"
                 height="40"
                 viewBox="0 0 50 50"
@@ -213,17 +213,31 @@ $metric_four = get_option('soulfulsynergy_metric_4');
         </div>
     </div>
     
-    <div class = "divider"></div>
+    <div class="divider"></div>
     <!-- Events -->
     <div id="events">
         <h1>Upcoming Events</h1>
         <div class="event-calendar">
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
+            <?php
+            for($i = 1; $i < 5; $i++) {
+                $castedDate = strtotime(get_theme_mod("event_".$i."_date"));
+                ?>
+                <div class="box">
+                    <div class="event-date">
+                        <span class="event-month"><?php echo date("M", $castedDate); ?></span>
+                        <span class="event-day"><?php echo date("d", $castedDate); ?></span>
+                        <span class="event-time"><?php echo date("h:i A", $castedDate); ?></span>
+                    </div>
+                    <div class="event-meta">
+                        <a href="<?php echo get_theme_mod("event_".$i."_link"); ?>" target="_blank" class="event-title"><?php echo get_theme_mod("event_".$i."_title"); ?></a>
+                        <p class="event-desc"><?php echo get_theme_mod("event_".$i."_description"); ?></p>
+                    </div>
+                </div>
+                <?php
+            }
+            ?>
         </div>
-        <button>All Events</button>
+        <a class="btn" href="<?php echo get_theme_mod("events_calendar"); ?>" target="_blank">All Events</a>
     </div>
 </div>
 <script>

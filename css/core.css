@@ -441,6 +441,52 @@ footer {
 
 /* End Footer */
 
+.event-calendar .box {
+    min-height: 50px;
+    color: #ffffff;
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    padding: 5px 20px;
+    width: 80%;
+    max-width: 750px;
+}
+
+.event-date {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    margin: 2px 20px 0px 0px;
+}
+
+.event-day {
+    font-size: 2rem;
+}
+
+.event-time {
+    margin-top: 5px;
+    font-size: 0.75rem;
+}
+
+.event-meta {
+    line-height: 1.5rem;
+}
+
+.event-meta a {
+    color: #ffffff !important;
+}
+
+.event-meta a:hover {
+    text-decoration: underline;
+}
+
+.event-title {
+    display: block;
+    margin: 5px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
 /* Begin Services Page */
 .services-intro {
     min-height: 65vh;

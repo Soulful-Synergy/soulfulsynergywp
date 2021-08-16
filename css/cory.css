@@ -125,18 +125,18 @@ svg.next:hover {
     border: 2px solid #fff;
     cursor: pointer;
 }
-#services button,
-#events button {
-    display: flex;
-    justify-content: center;
-    margin: 30px auto auto;
-    color: #fff;
-    font-size: 15px;
-    border: 2px solid #fff;
+#services a.btn,
+#events a.btn {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    color: #ffffff;
+    font-size: 0.9rem;
+    border: 2px solid #ffffff;
     background-color: #1a1e1f;
     border-radius: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
+    padding: 5px 10px;
+    width: 100px;
 }
 
 div#impact {
@@ -193,7 +193,6 @@ div#testimonials h1 {
 }
 .testimonials-carousel .set {
     display: none;
-    width: 50%;
     margin: 0 auto;
     text-align: center;
     padding: 20px 0px;
@@ -224,14 +223,11 @@ div#events h1 {
     flex-flow: column;
     justify-content: center;
     width: 100%;
-    padding: 20px 0px 20px 0;
 }
 .event-calendar .box {
     margin: auto auto 20px;
-    display: inline-flex;
-    justify-content: center;
-    width: 80%;
     height: auto;
+    background-color: #1a1e1f;
 }
 .event-calendar .box img {
     margin: auto auto auto 10px;
@@ -508,7 +504,6 @@ div#events h1 {
         flex-flow: row;
     }
     .testimonials-carousel .set {
-        width: 70%;
         margin: auto;
         text-align: center;
         padding: 0px 0px 20px;
@@ -520,9 +515,7 @@ div#events h1 {
         margin: auto;
         background-color: #000;
     }
-    .event-calendar .box {
-        background-color: #1a1e1f;
-    }
+
     .event-calendar .box .info {
         color: #fff;
     }

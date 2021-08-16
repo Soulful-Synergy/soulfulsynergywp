@@ -44,20 +44,6 @@
             )
         );
 
-        register_post_type('event',
-        array(
-            'labels'    => array(
-                'name'              => __('Events', 'soulfulsynergy'),
-                'singular_name'     => __('Event', 'soulfulsynergy'),
-                'add_new_item'      => __('Add New Event', 'soulfulsynergy')
-            ),
-                'public'        => true,
-                'has_archive'   => false,
-                'supports'      => array('title'),
-                'menu_icon'     => 'dashicons-calendar-alt'
-        )
-    );
-
         register_post_type('team_member',
             array(
                 'labels'    => array(
@@ -69,20 +55,6 @@
                     'has_archive'   => false,
                     'supports'      => array('title'),
                     'menu_icon'     => 'dashicons-groups'
-            )
-        );
-
-        register_post_type('award',
-            array(
-                'labels'    => array(
-                    'name'              => __('Awards', 'soulfulsynergy'),
-                    'singular_name'     => __('Team Member', 'soulfulsynergy'),
-                    'add_new_item'      => __('Add New Award', 'soulfulsynergy')
-                ),
-                    'public'        => true,
-                    'has_archive'   => false,
-                    'supports'      => array('title'),
-                    'menu_icon'     => 'dashicons-awards'
             )
         );
 
