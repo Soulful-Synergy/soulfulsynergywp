@@ -893,7 +893,7 @@ horizontal scrolling in the mobile view */
 }
 
 .about-history-img {
-    width: 100vw;
+    width: 100%;
     height: auto;
     background-color: var(--about-award-bg);
 }
@@ -935,7 +935,7 @@ horizontal scrolling in the mobile view */
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: auto;
     font-size: 1.3rem;
     font-weight: 600;
