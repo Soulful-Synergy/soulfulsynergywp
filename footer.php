@@ -133,7 +133,7 @@
         } else {
             foreach( $tags as $tag ) {
                 ?>
-                <a class="nav-link" href="/pathways/<?php echo $tag->slug ?>"><?php echo $tag->name; ?></a>
+                <a class="nav-link" href="/pathways/<?php echo $tag->slug ?>"><img src="<?php echo get_theme_mod($tag->slug."_pathways_images"); ?>" width="50" height="50"><?php echo $tag->name; ?></a>
                 <?php
             }
         }
