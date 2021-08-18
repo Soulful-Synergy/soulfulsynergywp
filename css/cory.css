@@ -113,6 +113,7 @@ div#services {
 .homepage-services-carousel .set.after {
     display: flex;
     flex-flow: row;
+    flex-wrap: wrap;
     margin: auto;
     width: 90%;
     justify-content: center;
@@ -179,7 +180,7 @@ div#testimonials {
     margin: 3% 2% 4% auto;
 }
 div#testimonials h1 {
-    padding: 10px 0 30px;
+    margin-bottom: 30px;
 }
 .testimonials-carousel {
     display: inline-flex;
@@ -225,7 +226,7 @@ div#events h1 {
     width: 100%;
 }
 .event-calendar .box {
-    margin: auto auto 20px;
+    margin: 20px auto;
     height: auto;
     background-color: #1a1e1f;
 }
@@ -239,6 +240,190 @@ div#events h1 {
     text-align: left;
     align-items: center;
 }
+#hero .hero-text-container {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+    margin: 3% auto;
+}
+
+.hero-text-container h1 {
+    font-size: 50px;
+}
+
+.hero-text-container h3 {
+    font-size: 25px;
+}
+
+.header h1,
+.header p {
+    color: white;
+}
+
+.header h1,
+.issue-card h1 {
+    font-size: 1.5rem;
+}
+
+.why-soulful-synergy .header,
+.why-issues .header,
+.why-connected .header,
+.why-collaboration .header {
+    display: flex;
+    justify-content: center;
+    background-color: var(--black);
+    padding: 20px 0 20px 0;
+    margin: auto;
+}
+
+.why-soulful-synergy img,
+.why-connected img,
+.why-collaboration img {
+    width: 50%;
+    margin: auto;
+}
+
+.introduction {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.why-issues .introduction {
+    width: 90%;
+}
+
+.why-collaboration .stakeholders .introduction {
+    width: 100%;
+}
+
+.header h1 {
+    font-size: 50px;
+    padding: 20px 0 20px 0;
+    text-align: center;
+}
+
+.sub-body,
+.card-holder,
+.main-body {
+    display: none;
+    flex-flow: column;
+    text-align: center;
+    justify-content: center;
+    width: 90%;
+    color: white;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.card-holder {
+    display: flex;
+    flex-flow: row;
+}
+
+.sub-body.open,
+.main-body.open {
+    display: flex;
+}
+
+.intro {
+    display: flex;
+    width: 100%;
+}
+
+.introduction p {
+    width: 90%;
+    padding: 2% 0 2% 0;
+    margin: auto;
+    text-align: center;
+}
+
+.why-issues .card-holder .issue-card img {
+    width: 90%;
+    margin: 5% auto;
+    margin-bottom: 10%;
+    border-radius: 10px;
+}
+
+.why-issues .card-holder .issue-card {
+    width: 30%;
+    background-color: var(--black);
+    border-radius: 30px;
+    margin: 2% auto;
+    padding: 30px 0 50px 0;
+    height: 30%;
+}
+
+.why-collaboration .stakeholders {
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-template-rows: auto auto;
+    grid-column-gap: 100px;
+    grid-row-gap: 50px;
+    text-align: center;
+    align-items: center;
+    padding: 10px 0 30px 0;
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+.why-collaboration .collaboration-card {
+    width: 100%;
+    margin: auto;
+    border-radius: 10px;
+    padding: 20px 0 10px 0;
+    background-color: var(--black);
+}
+
+.collaboration-card img {
+    justify-content: center;
+    margin: auto;
+    width: 40%;
+    height: 40%;
+    padding: 20px 0 20px 0;
+}
+
+.collaboration-card .intro {
+    flex-flow: column;
+    width: 80%;
+    margin: auto;
+}
+
+.why-collaboration .solution-visual {
+    display: none;
+}
+
+button.mainOpen,
+button.mainClose,
+button.subButton {
+    background-color: var(--black);
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 150px;
+    padding: 10px 0 10px 0;
+    margin: auto;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+button.mainOpen.open,
+button.mainClose.open,
+button.subButton.open {
+    display: none;
+}
+
+.main-body a {
+    color: white;
+    font-size: 15px;
+}
+
 @media (max-width: 768px) {
     nav#mobile-nav.open {
         visibility: visible;
@@ -372,6 +557,72 @@ div#events h1 {
         margin: auto;
         background-color: #000;
     }
+    #hero .hero-text-container {
+        width: 90%;
+    }
+
+    .hero-text-container h3 {
+        font-size: 20px;
+    }
+
+    .header h1 {
+        font-size: 25px;
+    }
+
+    .header span {
+        display: none;
+    }
+
+    .intro {
+        flex-flow: column;
+    }
+
+    .introduction {
+        width: 100%;
+        text-align: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .why-issues .header,
+    .why-connected .header,
+    .why-collaboration .header {
+        margin-top: 30px;
+    }
+
+    .why-collaboration {
+        margin-bottom: 30px;
+    }
+
+    .why-soulful-synergy img,
+    .why-connected img,
+    .why-collaboration img {
+        width: 100%;
+    }
+
+    .why-issues .card-holder {
+        flex-flow: column;
+    }
+
+    .why-issues .card-holder .issue-card {
+        width: 95%;
+        margin-bottom: 30px;
+    }
+
+    .why-collaboration .stakeholders {
+        display: flex;
+        flex-flow: column;
+        margin: auto;
+    }
+
+    .why-collaboration .collaboration-card {
+        margin-bottom: 50px;
+    }
+
+    .collaboration-card img {
+        width: 50%;
+        height: 50%;
+    }
 }
 
 @media (max-width: 992px) {
@@ -448,7 +699,6 @@ div#events h1 {
         height: auto;
     }
     .homepage-services-carousel .set.after {
-        flex-flow: row;
         margin: auto;
         width: 90%;
     }

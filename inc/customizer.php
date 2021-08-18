@@ -11,6 +11,15 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function soulfulsynergy_customize_register( $wp_customize ) {
+	// Front-Page Hero
+	$wp_customize->add_setting('front_page_hero_image');
+	
+	$wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'front_page_hero_image', array(
+		'label'		=> 'Upload Hero Image',
+		'section'	=> 'static_front_page',
+		'settings'	=> 'front_page_hero_image'
+	) ));
+
 	// Register Events Settings
 	for($i = 1; $i < 5; $i++) {
 		$wp_customize->add_setting('event_'.$i.'_title');
@@ -89,6 +98,30 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 			'selector' => '#events a.btn',
 		)
 	);
+
+	// Contact Page
+	$wp_customize->add_section('contact', array(
+		'title'			=> 'Contact Form',
+		'description'	=> '',
+		'priority'		=> '120',
+	));
+
+	$wp_customize->add_setting('contact_form_id');
+
+	$wp_customize->add_control( 'contact_form_id', array( 
+		'type'			=> 'number',
+		'section'		=> 'contact',
+		'label'			=> 'WPForms Contact Form ID',
+		'description'	=> ''
+	 ) );
+
+	 $wp_customize->add_setting('contact_hero_image');
+	
+	 $wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'contact_hero_image', array(
+		 'label'	=> 'Upload Contact Hero Image',
+		 'section'	=> 'contact',
+		 'settings'	=> 'contact_hero_image'
+	 ) ));
 
 	// Register Mission Statement Section
 	$wp_customize->add_section('mission', array(
@@ -307,8 +340,225 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 				);
 			}
 		}
-		
 	}
+
+	// Why Section
+	$wp_customize->add_section('why', array(
+		'title'			=> 'Why Page',
+		'description'	=> '',
+		'priority'		=> '120',
+	));
+	
+	$wp_customize->add_setting('why_hero_image');
+
+	$wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'why_hero_image_'.$i, array(
+		'label'		=> 'Upload Hero Image',
+		'section'	=> 'why',
+		'settings'	=> 'why_hero_image'
+	) ));
+
+	for($i = 1; $i < 4; $i++) {
+		$wp_customize->add_setting('why_banner_image_'.$i);
+		$wp_customize->add_setting('why_intro_text_'.$i);
+		$wp_customize->add_setting('why_full_text_'.$i);
+
+		$wp_customize->add_setting('why_card_image_'.$i);
+		$wp_customize->add_setting('why_card_intro_text_'.$i);
+		$wp_customize->add_setting('why_card_full_text_'.$i);
+
+
+		$wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'why_banner_image_'.$i, array(
+			'label'		=> 'Upload Section '.$i.' Banner Image',
+			'section'	=> 'why',
+			'settings'	=> 'why_banner_image_'.$i
+		) ));
+
+		$wp_customize->add_control( 'why_intro_text_'.$i, array( 
+			'type'			=> 'text',
+			'section'		=> 'why',
+			'label'			=> 'Section '.$i.' Intro Text',
+			'description'	=> ''
+		) );
+
+		$wp_customize->add_control( 'why_full_text_'.$i, array( 
+			'type'			=> 'textarea',
+			'section'		=> 'why',
+			'label'			=> 'Section '.$i.' Full Text',
+			'description'	=> ''
+		) );
+
+		$wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'why_card_image_'.$i, array(
+			'label'		=> 'Upload Card '.$i.' Image',
+			'section'	=> 'why',
+			'settings'	=> 'why_card_image_'.$i
+		) ));
+
+		$wp_customize->add_control( 'why_card_intro_text_'.$i, array( 
+			'type'			=> 'text',
+			'section'		=> 'why',
+			'label'			=> 'Card '.$i.' Intro Text',
+			'description'	=> ''
+		) );
+
+		$wp_customize->add_control( 'why_card_full_text_'.$i, array( 
+			'type'			=> 'textarea',
+			'section'		=> 'why',
+			'label'			=> 'Card '.$i.' Full Text',
+			'description'	=> ''
+		) );
+
+		$wp_customize->selective_refresh->add_partial(
+			'why_card_image_'.$i,
+			array(
+				'selector' => 'div.issue-card:nth-of-type('.$i.') img',
+			)
+		);
+
+		$wp_customize->selective_refresh->add_partial(
+			'why_card_intro_text_'.$i,
+			array(
+				'selector' => 'div.issue-card:nth-of-type('.$i.') div.introduction p',
+			)
+		);
+
+		$wp_customize->selective_refresh->add_partial(
+			'why_card_full_text_'.$i,
+			array(
+				'selector' => 'div.issue-card:nth-of-type('.$i.') div.sub-body p',
+			)
+		);
+	}
+
+	$wp_customize->selective_refresh->add_partial(
+		'why_banner_image_1',
+		array(
+			'selector' => 'div#why div.intro img',
+		)
+	);
+
+	$wp_customize->selective_refresh->add_partial(
+		'why_banner_image_2',
+		array(
+			'selector' => 'div#connections div.intro img',
+		)
+	);
+
+	$wp_customize->selective_refresh->add_partial(
+		'why_banner_image_3',
+		array(
+			'selector' => 'div#network div.intro img',
+		)
+	);
+	
+	$wp_customize->selective_refresh->add_partial(
+		'why_intro_text_1',
+		array(
+			'selector' => 'div#why div.intro div.introduction p',
+		)
+	);
+		
+	$wp_customize->selective_refresh->add_partial(
+		'why_intro_text_2',
+		array(
+			'selector' => 'div#connections div.intro div.introduction p',
+		)
+	);
+		
+	$wp_customize->selective_refresh->add_partial(
+		'why_intro_text_3',
+		array(
+			'selector' => 'div#network div.intro div.introduction p',
+		)
+	);
+
+	$wp_customize->selective_refresh->add_partial(
+		'why_full_text_1',
+		array(
+			'selector' => 'div#why div.main-body p',
+		)
+	);
+		
+	$wp_customize->selective_refresh->add_partial(
+		'why_full_text_2',
+		array(
+			'selector' => 'div#connections div.main-body p',
+		)
+	);
+		
+	$wp_customize->selective_refresh->add_partial(
+		'why_full_text_3',
+		array(
+			'selector' => 'div#network div.main-body p',
+		)
+	);
+
+
+	$wp_customize->add_setting('why_non-profit_intro');
+	$wp_customize->add_setting('why_individual_intro');
+	$wp_customize->add_setting('why_government_intro');
+	$wp_customize->add_setting('why_business_intro');
+
+	$wp_customize->add_setting('why_non-profit_full_text');
+	$wp_customize->add_setting('why_individual_full_text');
+	$wp_customize->add_setting('why_government_full_text');
+	$wp_customize->add_setting('why_business_full_text');
+
+	$wp_customize->add_control( 'why_non-profit_intro', array( 
+		'type'			=> 'text',
+		'section'		=> 'why',
+		'label'			=> 'Non-Profit Intro Text',
+		'description'	=> ''
+	) );
+
+	$wp_customize->add_control( 'why_non-profit_full_text', array( 
+		'type'			=> 'textarea',
+		'section'		=> 'why',
+		'label'			=> 'Non-Profit Full Text',
+		'description'	=> ''
+	) );
+
+	$wp_customize->add_control( 'why_individual_intro', array( 
+		'type'			=> 'text',
+		'section'		=> 'why',
+		'label'			=> 'Individual Intro Text',
+		'description'	=> ''
+	) );
+
+	$wp_customize->add_control( 'why_individual_full_text', array( 
+		'type'			=> 'textarea',
+		'section'		=> 'why',
+		'label'			=> 'Individual Full Text',
+		'description'	=> ''
+	) );
+
+	$wp_customize->add_control( 'why_government_intro', array( 
+		'type'			=> 'text',
+		'section'		=> 'why',
+		'label'			=> 'Government Intro Text',
+		'description'	=> ''
+	) );
+
+	$wp_customize->add_control( 'why_government_full_text', array( 
+		'type'			=> 'textarea',
+		'section'		=> 'why',
+		'label'			=> 'Government Full Text',
+		'description'	=> ''
+	) );
+
+	$wp_customize->add_control( 'why_business_intro', array( 
+		'type'			=> 'text',
+		'section'		=> 'why',
+		'label'			=> 'Business Intro Text',
+		'description'	=> ''
+	) );
+
+	$wp_customize->add_control( 'why_business_full_text', array( 
+		'type'			=> 'textarea',
+		'section'		=> 'why',
+		'label'			=> 'Business Full Text',
+		'description'	=> ''
+	) );
+
 
 	// Underscores Code
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';

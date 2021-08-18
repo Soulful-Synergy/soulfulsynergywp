@@ -448,7 +448,6 @@ footer {
     flex-flow: row;
     justify-content: flex-start;
     padding: 5px 20px;
-    width: 80%;
     max-width: 750px;
 }
 
@@ -1210,20 +1209,95 @@ horizontal scrolling in the mobile view */
     display: none;
 }
 
-@media (max-width: 575px) {
-    /* Begin About Us Page */
-    .about-hero-weare {
-        font-size: 3rem;
+/* WPForms Override */
+div.wpforms-container-full .wpforms-form input.wpforms-field-medium,
+div.wpforms-container-full .wpforms-form select.wpforms-field-medium,
+div.wpforms-container-full
+    .wpforms-form
+    .wpforms-field-row.wpforms-field-medium {
+    max-width: 100% !important;
+}
+
+div.wpforms-container-full .wpforms-form input[type='date'],
+div.wpforms-container-full .wpforms-form input[type='datetime'],
+div.wpforms-container-full .wpforms-form input[type='datetime-local'],
+div.wpforms-container-full .wpforms-form input[type='email'],
+div.wpforms-container-full .wpforms-form input[type='month'],
+div.wpforms-container-full .wpforms-form input[type='number'],
+div.wpforms-container-full .wpforms-form input[type='password'],
+div.wpforms-container-full .wpforms-form input[type='range'],
+div.wpforms-container-full .wpforms-form input[type='search'],
+div.wpforms-container-full .wpforms-form input[type='tel'],
+div.wpforms-container-full .wpforms-form input[type='text'],
+div.wpforms-container-full .wpforms-form input[type='time'],
+div.wpforms-container-full .wpforms-form input[type='url'],
+div.wpforms-container-full .wpforms-form input[type='week'],
+div.wpforms-container-full .wpforms-form select,
+div.wpforms-container-full .wpforms-form textarea {
+    border-radius: 10px !important;
+}
+
+button.wpforms-submit {
+    border: none !important;
+    border-radius: 10px !important;
+    background: #000000 !important;
+    color: #ffffff !important;
+}
+
+div#contact-page {
+    justify-content: space-between;
+}
+
+div#contact-page div#contact-form-wrapper {
+    width: 40%;
+    margin: 0 auto;
+}
+
+@media (max-width: 1400px) {
+    div#contact-page {
+        justify-content: center;
     }
 
-    .about-hero-soulful {
-        font-size: 4rem;
+    div#contact-page div#contact-form-wrapper {
+        width: 50%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .services-body {
+        padding: 50px 50px;
+    }
+    .bullet-container {
+        width: 40vw;
+    }
+    .img-container {
+        width: 60vw;
+    }
+}
+
+@media (max-width: 992px) {
+    .two-column {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    .bullet-container {
+        width: 70vw;
+    }
+    .img-container {
+        width: 70vw;
+        margin-bottom: 40px;
+    }
+    .diagram-boxes-container {
+        flex-wrap: wrap;
+    }
+    .about-mission-text {
+        margin: 50px 0px;
     }
 
-    .about-section-header h1 {
-        font-size: 2.5rem;
+    div#contact-page div#contact-form-wrapper {
+        width: 75%;
     }
-    /* End About Us Page */
 }
 
 @media (max-width: 768px) {
@@ -1385,40 +1459,24 @@ horizontal scrolling in the mobile view */
         margin-left: 0;
         margin-top: 30px;
     }
-}
 
-@media (max-width: 992px) {
-    .two-column {
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-    }
-    .bullet-container {
-        width: 70vw;
-    }
-    .img-container {
-        width: 70vw;
-        margin-bottom: 40px;
-    }
-    .diagram-boxes-container {
-        flex-wrap: wrap;
-    }
-    .about-mission-text {
-        margin: 50px 0px;
+    div#contact-page div#contact-form-wrapper {
+        width: 90%;
     }
 }
 
-@media (max-width: 1200px) {
-    .services-body {
-        padding: 50px 50px;
+@media (max-width: 575px) {
+    /* Begin About Us Page */
+    .about-hero-weare {
+        font-size: 3rem;
     }
-    .bullet-container {
-        width: 40vw;
-    }
-    .img-container {
-        width: 60vw;
-    }
-}
 
-@media (max-width: 1400px) {
+    .about-hero-soulful {
+        font-size: 4rem;
+    }
+
+    .about-section-header h1 {
+        font-size: 2.5rem;
+    }
+    /* End About Us Page */
 }
