@@ -96,6 +96,12 @@ function updateCardsVisible() {
         );
     }
 
+    // Correct amount of cards will be shown as the window is resized:
+    // e.g. if card-8 of 8 cards was the last selected card when only
+    // 2 cards are visible, when the user resizes the window to
+    // show 4 cards, the previous two cards will also be visible.
+    if (cardSelected < 1) cardSelected = 1;
+
     /* make sure that the there is consistency in the amount of cards visible
        as the user resizes the window. e.g. if card-8 of 8 cards was the last
        selected card when only 2 cards are visible, when the user resizes the
