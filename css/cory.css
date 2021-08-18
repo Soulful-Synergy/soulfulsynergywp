@@ -24,6 +24,7 @@ div#pathways h1,
 div#pathways .pathways-carousel {
     display: flex;
     flex-flow: row;
+    flex-wrap: wrap;
     justify-content: center;
     justify-content: space-around;
     margin: 20px auto;
@@ -34,7 +35,7 @@ div#pathways .pathways-carousel {
     flex-flow: column;
     align-items: center;
     height: 180px;
-    width: 25%;
+    width: 200px;
     margin: 0 30px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.45);
 }
@@ -489,9 +490,7 @@ button.subButton.open {
     div#mobile-bottom-nav a img {
         padding-bottom: 2px;
     }
-    .pathways-carousel .box {
-        width: 100%;
-    }
+
     .homepage-services-carousel svg.prev {
         margin: auto auto auto 10px;
     }
@@ -652,25 +651,13 @@ button.subButton.open {
         text-decoration: none;
         color: #000;
     }
-    div#pathways .pathways-carousel {
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-template-rows: auto auto;
-        grid-column-gap: 20px;
-        grid-row-gap: 20px;
-        text-align: center;
-        align-items: center;
-        padding: 10px 0 30px;
-        width: 90%;
-        margin: auto;
-        justify-content: unset;
-    }
+
     .pathways-carousel .box {
         background-color: #fff;
         margin: auto;
         height: 100%;
-        width: 80%;
         padding-bottom: 10px;
+        margin-bottom: 10px;
         border-radius: 5px;
     }
     .pathways-carousel .box img {
