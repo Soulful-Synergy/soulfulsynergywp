@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div id="hero">
+<div id="hero" style="background-image: url('<?php echo get_theme_mod("front_page_hero_image"); ?>');">
     <div class="tint">
         <div class="hero-text-container">
             <h1>
