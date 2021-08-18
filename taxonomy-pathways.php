@@ -14,91 +14,39 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 </div>
 <div class="diagram-container">
     <div class="diagram-boxes-container">
-        <div class="diagram-box-container">
-            <div class="diagram-box">
-            <div class="diagram-box-text">
-                <p>
-                Mauris interdum sollicitudin vestibulum. Suspendisse dolor
-                tellus, consectetur nec erat at, viverra porta dolor. Nulla
-                pretium accumsan pulvinar. Ut fermentum aliquet ligula, a
-                placerat dui.
-                </p>
+        <?php
+        for($i = 1; $i < 4; $i++) {
+            ?>
+            <div class="diagram-box-container">
+                <div class="diagram-box">
+                    <div class="diagram-box-text">
+                        <p>
+                        <?php echo get_theme_mod($term->slug."_step_".$i."_text"); ?>
+                        </p>
+                    </div>
+                    <div class="diagram-box-subtitle"><?php echo get_theme_mod($term->slug."_step_".$i."_title"); ?></div>
+                </div>
+                <div class="diagram-arrow">
+                    <svg
+                        width="30"
+                        height="42"
+                        viewBox="0 0 30 42"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                        d="M15 41.7732L29.4338 16.7732L0.566242 16.7732L15 41.7732ZM12.5 0L12.5 19.2732H17.5L17.5 0L12.5 0Z"
+                        fill="#44A67F"
+                        />
+                    </svg>
+                </div>
             </div>
-            <div class="diagram-box-subtitle">STEP TITLE</div>
-            </div>
-            <div class="diagram-arrow">
-            <svg
-                width="30"
-                height="42"
-                viewBox="0 0 30 42"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <path
-                d="M15 41.7732L29.4338 16.7732L0.566242 16.7732L15 41.7732ZM12.5 0L12.5 19.2732H17.5L17.5 0L12.5 0Z"
-                fill="#44A67F"
-                />
-            </svg>
-            </div>
-        </div>
-        <div class="diagram-box-container">
-            <div class="diagram-box">
-            <div class="diagram-box-text">
-                <p>
-                Mauris interdum sollicitudin vestibulum. Suspendisse dolor
-                tellus, consectetur nec erat at, viverra porta dolor. Nulla
-                pretium accumsan pulvinar. Ut fermentum aliquet ligula, a
-                placerat dui.
-                </p>
-            </div>
-            <div class="diagram-box-subtitle">STEP TITLE</div>
-            </div>
-            <div class="diagram-arrow">
-            <svg
-                width="30"
-                height="42"
-                viewBox="0 0 30 42"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <path
-                d="M15 41.7732L29.4338 16.7732L0.566242 16.7732L15 41.7732ZM12.5 0L12.5 19.2732H17.5L17.5 0L12.5 0Z"
-                fill="#44A67F"
-                />
-            </svg>
-            </div>
-        </div>
-        <div class="diagram-box-container">
-            <div class="diagram-box">
-            <div class="diagram-box-text">
-                <p>
-                Mauris interdum sollicitudin vestibulum. Suspendisse dolor
-                tellus, consectetur nec erat at, viverra porta dolor. Nulla
-                pretium accumsan pulvinar. Ut fermentum aliquet ligula, a
-                placerat dui.
-                </p>
-            </div>
-            <div class="diagram-box-subtitle">STEP TITLE</div>
-            </div>
-            <div class="diagram-arrow">
-            <svg
-                width="30"
-                height="42"
-                viewBox="0 0 30 42"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <path
-                d="M15 41.7732L29.4338 16.7732L0.566242 16.7732L15 41.7732ZM12.5 0L12.5 19.2732H17.5L17.5 0L12.5 0Z"
-                fill="#44A67F"
-                />
-            </svg>
-            </div>
-        </div>
+            <?php
+        }
+        ?>
     </div>
     <div class="diagram-final-box">
-    Mauris interdum sollicitudin vestibulum. Suspendisse dolor tellus,
-    consectetur nec erat at, viverra porta dolor.
+    <?php echo get_theme_mod($term->slug."_step_summary"); ?>
     </div>
 </div>
 <!-- TODO: Add Link to See All Services -->

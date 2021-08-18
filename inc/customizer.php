@@ -166,6 +166,44 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 		'label'			=> 'Business Verbiage',
 		'description'	=> ''
 	 ) );
+
+	for($i = 1; $i < 4; $i++) {
+		$wp_customize->add_setting( 'business_step_'.$i.'_title', array( 
+			'capability'	=> 'edit_theme_options',
+			'default'		=> '',
+		 ) );
+	
+		 $wp_customize->add_control( 'business_step_'.$i.'_title', array( 
+			'type'			=> 'text',
+			'section'		=> 'pathways',
+			'label'			=> 'Business Step '.$i.' Title',
+			'description'	=> ''
+		 ) );
+
+		 $wp_customize->add_setting( 'business_step_'.$i.'_text', array( 
+			'capability'	=> 'edit_theme_options',
+			'default'		=> '',
+		 ) );
+	
+		 $wp_customize->add_control( 'business_step_'.$i.'_text', array( 
+			'type'			=> 'text',
+			'section'		=> 'pathways',
+			'label'			=> 'Business Step '.$i.' Description',
+			'description'	=> ''
+		 ) );
+	}
+
+	$wp_customize->add_setting( 'business_step_summary', array( 
+		'capability'	=> 'edit_theme_options',
+		'default'		=> '',
+	 ) );
+
+	 $wp_customize->add_control( 'business_step_summary', array( 
+		'type'			=> 'text',
+		'section'		=> 'pathways',
+		'label'			=> 'Business Steps Summary',
+		'description'	=> ''
+	 ) );
 	
 	$wp_customize->add_setting('individual_pathways_images');
 
@@ -185,6 +223,44 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 		'type'			=> 'textarea',
 		'section'		=> 'pathways',
 		'label'			=> 'Individual Verbiage',
+		'description'	=> ''
+	 ) );
+
+	 for($i = 1; $i < 4; $i++) {
+		$wp_customize->add_setting( 'individual_step_'.$i.'_title', array( 
+			'capability'	=> 'edit_theme_options',
+			'default'		=> '',
+		 ) );
+	
+		 $wp_customize->add_control( 'individual_step_'.$i.'_title', array( 
+			'type'			=> 'text',
+			'section'		=> 'pathways',
+			'label'			=> 'Individual Step '.$i.' Title',
+			'description'	=> ''
+		 ) );
+
+		 $wp_customize->add_setting( 'individual_step_'.$i.'_text', array( 
+			'capability'	=> 'edit_theme_options',
+			'default'		=> '',
+		 ) );
+	
+		 $wp_customize->add_control( 'individual_step_'.$i.'_text', array( 
+			'type'			=> 'text',
+			'section'		=> 'pathways',
+			'label'			=> 'Individual Step '.$i.' Description',
+			'description'	=> ''
+		 ) );
+	}
+
+	$wp_customize->add_setting( 'individual_step_summary', array( 
+		'capability'	=> 'edit_theme_options',
+		'default'		=> '',
+	 ) );
+
+	 $wp_customize->add_control( 'individual_step_summary', array( 
+		'type'			=> 'text',
+		'section'		=> 'pathways',
+		'label'			=> 'Individual Steps Summary',
 		'description'	=> ''
 	 ) );
 	
@@ -209,6 +285,44 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 		'description'	=> ''
 	 ) );
 	
+	 for($i = 1; $i < 4; $i++) {
+		$wp_customize->add_setting( 'non-profit_step_'.$i.'_title', array( 
+			'capability'	=> 'edit_theme_options',
+			'default'		=> '',
+		 ) );
+	
+		 $wp_customize->add_control( 'non-profit_step_'.$i.'_title', array( 
+			'type'			=> 'text',
+			'section'		=> 'pathways',
+			'label'			=> 'Non-Profit Step '.$i.' Title',
+			'description'	=> ''
+		 ) );
+
+		 $wp_customize->add_setting( 'non-profit_step_'.$i.'_text', array( 
+			'capability'	=> 'edit_theme_options',
+			'default'		=> '',
+		 ) );
+	
+		 $wp_customize->add_control( 'non-profit_step_'.$i.'_text', array( 
+			'type'			=> 'text',
+			'section'		=> 'pathways',
+			'label'			=> 'Non-Profit Step '.$i.' Description',
+			'description'	=> ''
+		 ) );
+	}
+
+	$wp_customize->add_setting( 'non-profit_step_summary', array( 
+		'capability'	=> 'edit_theme_options',
+		'default'		=> '',
+	 ) );
+
+	 $wp_customize->add_control( 'non-profit_step_summary', array( 
+		'type'			=> 'text',
+		'section'		=> 'pathways',
+		'label'			=> 'Non-Profit Steps Summary',
+		'description'	=> ''
+	 ) );
+
 	$wp_customize->add_setting('government_pathways_images');
 
 	$wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'governmentpathways_images', array(
@@ -229,7 +343,45 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 		'label'			=> 'Government Verbiage',
 		'description'	=> ''
 	 ) );
+
+	for($i = 1; $i < 4; $i++) {
+		$wp_customize->add_setting( 'government_step_'.$i.'_title', array( 
+			'capability'	=> 'edit_theme_options',
+			'default'		=> '',
+		 ) );
 	
+		 $wp_customize->add_control( 'government_step_'.$i.'_title', array( 
+			'type'			=> 'text',
+			'section'		=> 'pathways',
+			'label'			=> 'Government Step '.$i.' Title',
+			'description'	=> ''
+		 ) );
+
+		 $wp_customize->add_setting( 'government_step_'.$i.'_text', array( 
+			'capability'	=> 'edit_theme_options',
+			'default'		=> '',
+		 ) );
+	
+		 $wp_customize->add_control( 'government_step_'.$i.'_text', array( 
+			'type'			=> 'text',
+			'section'		=> 'pathways',
+			'label'			=> 'Government Step '.$i.' Description',
+			'description'	=> ''
+		 ) );
+	}
+	
+	$wp_customize->add_setting( 'government_step_summary', array( 
+		'capability'	=> 'edit_theme_options',
+		'default'		=> '',
+	 ) );
+
+	 $wp_customize->add_control( 'government_step_summary', array( 
+		'type'			=> 'text',
+		'section'		=> 'pathways',
+		'label'			=> 'Government Steps Summary',
+		'description'	=> ''
+	 ) );
+
 	// About Section
 	$wp_customize->add_section('about', array(
 		'title'			=> 'About Page',
