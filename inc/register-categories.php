@@ -8,9 +8,10 @@ function soulfulsynergy_register_categories() {
     if(!term_exists('non-profit')) wp_insert_term('Non-Profit','pathways');
 
     // Course Categories
-    if(!term_exists('in-person')) wp_insert_term('In-Person','course_cats');
+    if(!term_exists('physical')) wp_insert_term('In-Person','course_cats');
     if(!term_exists('online')) wp_insert_term('Online','course_cats');
     if(!term_exists('hybrid')) wp_insert_term('Hybrid','course_cats');
+    if(!term_exists('featured')) wp_insert_term('Featured','course_cats');
 
 }
 

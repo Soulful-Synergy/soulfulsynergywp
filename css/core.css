@@ -69,7 +69,6 @@ body {
         #1a8ba9 100%
     );
 }
-
 /* End Globals */
 
 input {
@@ -90,6 +89,10 @@ a {
 a:hover,
 a svg:hover {
     transition: 0.2s all;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 /* Begin Header */
@@ -1263,6 +1266,299 @@ div#contact-page div#contact-form-wrapper {
     margin: 0 auto;
 }
 
+/* Courses Page */
+#featured-courses {
+    padding: 20px 0px;
+    background: black;
+}
+
+#featured-courses {
+    color: #ffffff;
+}
+
+#featured-courses h2 {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.featured-course:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: #ffffff;
+}
+
+.swiper-pagination-bullet {
+    background: #ffffff;
+    opacity: 0.8;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--green2);
+}
+
+#courses-grid {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.course-preview {
+    max-width: 250px;
+    margin: 20px 40px;
+}
+
+.course-preview-inner {
+    margin-bottom: 10px;
+}
+
+.course-preview-inner p,
+.course-preview-inner h4 {
+    margin: 5px 0;
+}
+
+.course-preview-inner:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+#courses-wrapper form {
+    text-align: right;
+    margin: 20px 50px;
+}
+
+#courses-wrapper form select {
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+#courses-wrapper form button {
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    background: #000000;
+    color: #ffffff;
+}
+
+#courses-wrapper form a {
+    display: inline-block;
+    border-radius: 4px;
+    padding: 5px 10px;
+    background: #000000;
+    color: #ffffff;
+    font-size: 0.8rem;
+}
+
+#courses-wrapper form div.filters-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+#courses-wrapper form div#checkboxes-container {
+    display: flex;
+}
+
+#courses-wrapper form div#checkboxes-container div {
+    margin-right: 10px;
+}
+
+#courses-wrapper form div#checkboxes-container div:nth-of-type(1) {
+    margin: 0 10px;
+}
+
+.course-preview-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.course-preview-footer button {
+    border: 0;
+    border-radius: 4px;
+    background: #000000;
+    color: #ffffff;
+    padding: 5px 10px;
+}
+
+/* MicroModal */
+.micromodal {
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+        helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial,
+        sans-serif;
+}
+
+.micromodal__overlay {
+    z-index: 99999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.micromodal__container {
+    background-color: #fff;
+    padding: 30px;
+    max-width: 500px;
+    max-height: 100vh;
+    border-radius: 4px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.micromodal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.micromodal__title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.25;
+    color: #00449e;
+    box-sizing: border-box;
+}
+
+.micromodal__close {
+    background: transparent;
+    border: 0;
+}
+
+.micromodal__header .micromodal__close:before {
+    content: '\2715';
+}
+
+.micromodal__content {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.micromodal__btn {
+    font-size: 0.875rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: #e6e6e6;
+    color: rgba(0, 0, 0, 0.8);
+    border-radius: 0.25rem;
+    border-style: none;
+    border-width: 0;
+    cursor: pointer;
+    -webkit-appearance: button;
+    text-transform: none;
+    overflow: visible;
+    line-height: 1.15;
+    margin: 0;
+    will-change: transform;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    transition: -webkit-transform 0.25s ease-out;
+    transition: transform 0.25s ease-out;
+    transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
+}
+
+.micromodal__btn:focus,
+.micromodal__btn:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.micromodal__btn-primary {
+    background-color: #00449e;
+    color: #fff;
+}
+
+@keyframes mmfadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes mmfadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes mmslideIn {
+    from {
+        transform: translateY(15%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes mmslideOut {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10%);
+    }
+}
+
+.micromodal-slide {
+    display: none;
+}
+
+.micromodal-slide.is-open {
+    display: block;
+}
+
+.micromodal-slide[aria-hidden='false'] .micromodal__overlay {
+    animation: mmfadeIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden='false'] .micromodal__container {
+    animation: mmslideIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden='true'] .micromodal__overlay {
+    animation: mmfadeOut 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden='true'] .micromodal__container {
+    animation: mmslideOut 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide .micromodal__container,
+.micromodal-slide .micromodal__overlay {
+    will-change: transform;
+}
+
 @media (max-width: 1400px) {
     div#contact-page {
         justify-content: center;
@@ -1473,6 +1769,15 @@ div#contact-page div#contact-form-wrapper {
     div#contact-page div#contact-form-wrapper {
         width: 90%;
     }
+
+    #courses-wrapper form div.filters-wrapper {
+        justify-content: center;
+    }
+
+    #courses-wrapper form div.filters-wrapper select {
+        width: 80%;
+        margin-top: 10px;
+    }
 }
 
 @media (max-width: 575px) {
@@ -1489,4 +1794,9 @@ div#contact-page div#contact-form-wrapper {
         font-size: 2.5rem;
     }
     /* End About Us Page */
+
+    #courses-wrapper form div.filters-wrapper select {
+        width: 100%;
+        margin-top: 10px;
+    }
 }
