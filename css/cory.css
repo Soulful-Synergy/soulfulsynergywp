@@ -198,6 +198,7 @@ div#testimonials h1 {
     margin: 0 auto;
     text-align: center;
     padding: 20px 0px;
+    width: 80%;
 }
 .testimonials-carousel img {
     margin-bottom: 20px;

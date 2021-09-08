@@ -191,11 +191,11 @@ nav {
     justify-content: space-around;
 }
 
-.main-nav a:nth-of-type(3) {
+.main-nav a:nth-of-type(4) {
     margin-right: 50px;
 }
 
-.main-nav a:nth-of-type(4) {
+.main-nav a:nth-of-type(5) {
     margin-left: 50px;
 }
 
@@ -333,6 +333,12 @@ div#sub-nav {
     width: 100% !important;
     justify-content: center !important;
     align-items: center !important;
+    text-align: center !important;
+}
+
+.video-text h1,
+h3 {
+    margin: 0 0 50px 0 !important;
 }
 
 video.video-hero {
@@ -1685,6 +1691,19 @@ div#contact-page div#contact-form-wrapper {
     }
 
     /* End Header */
+    .video-text h1,
+    h3 {
+        margin: 0 !important;
+    }
+
+    .video-text h1 {
+        font-size: 2rem !important;
+        margin-bottom: 10px !important;
+    }
+
+    .video-text h3 {
+        font-size: 1rem !important;
+    }
 
     .services-intro {
         flex-direction: column-reverse;
