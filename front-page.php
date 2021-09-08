@@ -1,7 +1,7 @@
 <?php get_header(); ?>
-<div id="hero" style="background-image: url('<?php echo get_theme_mod("front_page_hero_image"); ?>');">
-    <div class="tint">
-        <div class="hero-text-container">
+<div id="homepage-hero">
+    <div class="video-tint tint">
+        <div class="video-text hero-text-container">
             <h1>
                 We are a socially conscious <br />
                 consulting company.
@@ -12,6 +12,9 @@
             </h3>
         </div>
     </div>
+    <video class="video-hero" poster="<?php echo get_theme_mod("front_page_hero_image"); ?>"  autoplay muted loop>
+        <source src="<?php echo get_theme_mod("front_page_hero_video"); ?>" type="video/mp4">
+    </video>
 </div>
 <!-- Pathways -->
 <div id="pathways">

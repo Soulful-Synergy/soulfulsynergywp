@@ -82,7 +82,7 @@ div#services {
     background-color: #1a1e1f;
     height: 250px;
     width: 25%;
-    margin: 0 auto;
+    margin: 0 auto 25px auto;
     padding: 10px 0;
     box-shadow: 15px 10px 10px rgba(0, 0, 0, 0.45);
 }

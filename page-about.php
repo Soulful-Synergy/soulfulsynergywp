@@ -116,7 +116,6 @@
             <div class="about-award-row"><?php echo get_theme_mod("award_1_row1_col2"); ?></div>
             <div class="about-award-row"><?php echo get_theme_mod("award_1_row2_col2"); ?></div>
         </div>
-        <a class="anchor" id="anchor-team"></a>
         <div class="about-award-col">
             <div class="about-award-row"><?php echo get_theme_mod("award_1_row1_col3"); ?></div>
             <div class="about-award-row">
@@ -125,7 +124,7 @@
         </div>
     </div>
     <div class="about-section-header">
-        <div class="flex-center-v-h">
+        <div id="anchor-team" class="flex-center-v-h">
             <h1>OUR TEAM</h1>
         </div>
     </div>
@@ -225,24 +224,24 @@
     <div class="photos-single-column">
         <div id="about-photo-4" class="single-photo">
             <a
-                href="<?php echo get_theme_mod('about_image_1'); ?>"
+                href="<?php echo get_theme_mod('about_image_4'); ?>"
                 data-lightbox="about-lightbox-strip-2"
-                ><img src="<?php echo get_theme_mod('about_image_1'); ?>" alt=""
+                ><img src="<?php echo get_theme_mod('about_image_4'); ?>" alt=""
             /></a>
         </div>
         <div id="about-photo-5" class="single-photo">
             <a
-                href="<?php echo get_theme_mod('about_image_2'); ?>"
+                href="<?php echo get_theme_mod('about_image_5'); ?>"
                 data-lightbox="about-lightbox-strip-2"
-                ><img src="<?php echo get_theme_mod('about_image_2'); ?>" alt=""
+                ><img src="<?php echo get_theme_mod('about_image_5'); ?>" alt=""
             /></a>
         </div>
 
         <div id="about-photo-6" class="single-photo">
             <a
-                href="<?php echo get_theme_mod('about_image_3'); ?>"
+                href="<?php echo get_theme_mod('about_image_6'); ?>"
                 data-lightbox="about-lightbox-strip-2"
-                ><img src="<?php echo get_theme_mod('about_image_3'); ?>" alt=""
+                ><img src="<?php echo get_theme_mod('about_image_6'); ?>" alt=""
             /></a>
         </div>
     </div>
@@ -255,7 +254,6 @@
             <div class="about-award-row"><?php echo get_theme_mod("award_3_row1_col2"); ?></div>
             <div class="about-award-row"><?php echo get_theme_mod("award_3_row2_col2"); ?></div>
         </div>
-        <a class="anchor" id="anchor-team"></a>
         <div class="about-award-col">
             <div class="about-award-row"><?php echo get_theme_mod("award_3_row1_col3"); ?></div>
             <div class="about-award-row">
@@ -305,7 +303,6 @@
             <div class="about-award-row"><?php echo get_theme_mod("award_4_row1_col2"); ?></div>
             <div class="about-award-row"><?php echo get_theme_mod("award_4_row2_col2"); ?></div>
         </div>
-        <a class="anchor" id="anchor-team"></a>
         <div class="about-award-col">
             <div class="about-award-row"><?php echo get_theme_mod("award_4_row1_col3"); ?></div>
             <div class="about-award-row">

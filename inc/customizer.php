@@ -20,6 +20,14 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 		'settings'	=> 'front_page_hero_image'
 	) ));
 
+	$wp_customize->add_setting('front_page_hero_video');
+	
+	$wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'front_page_hero_video', array(
+		'label'		=> 'Upload Hero Video',
+		'section'	=> 'static_front_page',
+		'settings'	=> 'front_page_hero_video'
+	) ));
+
 	// Register Events Settings
 	for($i = 1; $i < 5; $i++) {
 		$wp_customize->add_setting('event_'.$i.'_title');
