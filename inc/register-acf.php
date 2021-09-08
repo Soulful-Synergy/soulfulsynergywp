@@ -124,6 +124,14 @@ function soulfulsynergy_register_fields() {
                 'required' => 1,
             ),
             array (
+                'key' => 'tc_price_upper',
+                'label' => 'Price Upper Bound',
+                'name' => 'tc_price_upper',
+                'type' => 'number',
+                'instructions' => 'If this Course has Variable Pricing, Enter an Upper Bound Price',
+                'required' => 0,
+            ),
+            array (
                 'key' => 'tc_short_desc',
                 'label' => 'Short Description',
                 'name'  => 'tc_short_desc',

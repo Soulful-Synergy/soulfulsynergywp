@@ -33,23 +33,31 @@ get_header();
                 $i = 1;
                 while( $the_query->have_posts() ) {
                     $the_query->the_post();
+
+                    $price = get_field("tc_price") == "0" ? "Free" : "$".get_field("tc_price");
+
+                    $upper = get_field("tc_price_upper");
+
+                    if($upper != "") $price = $price." - $".$upper;
+
                     ?>
                     <div class="micromodal micromodal-slide" id="modal-featured-<?php echo $i; ?>" aria-hidden="true">
                         <div class="micromodal__overlay" tabindex="-1" data-micromodal-close>
                             <div class="micromodal__container" role="dialog" aria-modal="true" aria-labelledby="modal-featured-<?php echo $i; ?>-title">
                                 <header class="micromodal__header">
                                 <h2 class="micromodal__title" id="modal-featured-<?php echo $i; ?>-title">
-                                    Micromodal
+                                    <?php echo the_title(); ?> (<?php echo $price; ?>)
                                 </h2>
                                 <button class="micromodal__close" aria-label="Close modal" data-micromodal-close></button>
                                 </header>
                                 <main class="micromodal__content" id="modal-featured-<?php echo $i; ?>-content">
+                                <img src="<?php echo get_field("tc_image")['url']; ?>">
                                 <p>
-                                    Try hitting the <code>tab</code> key and notice how the focus stays within the modal itself. Also, <code>esc</code> to close modal.
+                                    <?php echo get_field('tc_full_desc'); ?>
                                 </p>
                                 </main>
                                 <footer class="micromodal__footer">
-                                <button class="micromodal__btn micromodal__btn-primary">Continue</button>
+                                <a href="<?php echo get_field("tc_link")["url"]; ?>" target="_blank" class="micromodal__btn micromodal__btn-primary">Register</a>
                                 <button class="micromodal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
                                 </footer>
                             </div>
@@ -184,23 +192,31 @@ get_header();
                 $i = 1;
                 while( $the_query->have_posts() ) {
                     $the_query->the_post();
+
+                    $price = get_field("tc_price") == "0" ? "Free" : "$".get_field("tc_price");
+
+                    $upper = get_field("tc_price_upper");
+
+                    if($upper != "") $price = $price." - $".$upper;
+                    
                     ?>
                     <div class="micromodal micromodal-slide" id="modal-reg-<?php echo $i; ?>" aria-hidden="true">
                         <div class="micromodal__overlay" tabindex="-1" data-micromodal-close>
                             <div class="micromodal__container" role="dialog" aria-modal="true" aria-labelledby="modal-reg-<?php echo $i; ?>-title">
                                 <header class="micromodal__header">
                                 <h2 class="micromodal__title" id="modal-reg-<?php echo $i; ?>-title">
-                                    Micromodal
+                                    <?php echo the_title(); ?> (<?php echo $price; ?>)
                                 </h2>
                                 <button class="micromodal__close" aria-label="Close modal" data-micromodal-close></button>
                                 </header>
                                 <main class="micromodal__content" id="modal-reg-<?php echo $i; ?>-content">
+                                <img src="<?php echo get_field("tc_image")['url']; ?>">
                                 <p>
-                                    Try hitting the <code>tab</code> key and notice how the focus stays within the modal itself. Also, <code>esc</code> to close modal.
+                                    <?php echo get_field('tc_full_desc'); ?>
                                 </p>
                                 </main>
                                 <footer class="micromodal__footer">
-                                <button class="micromodal__btn micromodal__btn-primary">Continue</button>
+                                <a href="<?php echo get_field("tc_link")["url"]; ?>" target="_blank" class="micromodal__btn micromodal__btn-primary">Register</a>
                                 <button class="micromodal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
                                 </footer>
                             </div>
@@ -213,7 +229,7 @@ get_header();
                             <p><?php echo get_field("tc_short_desc"); ?></p>
                         </div>
                         <div class="course-preview-footer">
-                            <strong><?php echo get_field("tc_price") == "0" ? "Free" : "$".get_field("tc_price"); ?></strong>
+                            <strong><?php echo $price; ?></strong>
                             <button data-micromodal-trigger="modal-reg-<?php echo $i; ?>">Register</button>
                         </div>
                     </div>

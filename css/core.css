@@ -1463,7 +1463,7 @@ div#contact-page div#contact-form-wrapper {
 .micromodal__container {
     background-color: #fff;
     padding: 30px;
-    max-width: 500px;
+    width: 80%;
     max-height: 100vh;
     border-radius: 4px;
     overflow-y: auto;
@@ -1502,6 +1502,24 @@ div#contact-page div#contact-form-wrapper {
     color: rgba(0, 0, 0, 0.8);
 }
 
+.micromodal__content img {
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    max-height: 300px;
+}
+
+.micromodal__footer {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.micromodal__footer a {
+    margin-bottom: 10px;
+}
+
 .micromodal__btn {
     font-size: 0.875rem;
     padding-left: 1rem;
@@ -1512,6 +1530,7 @@ div#contact-page div#contact-form-wrapper {
     color: rgba(0, 0, 0, 0.8);
     border-radius: 0.25rem;
     border-style: none;
+    border: none;
     border-width: 0;
     cursor: pointer;
     -webkit-appearance: button;
@@ -1530,7 +1549,6 @@ div#contact-page div#contact-form-wrapper {
     transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
 }
 
-.micromodal__btn:focus,
 .micromodal__btn:hover {
     -webkit-transform: scale(1.05);
     transform: scale(1.05);
