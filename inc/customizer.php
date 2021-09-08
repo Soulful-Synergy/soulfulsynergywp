@@ -22,8 +22,9 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('front_page_hero_video');
 	
-	$wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'front_page_hero_video', array(
+	$wp_customize->add_control(new WP_Customize_Media_Control( $wp_customize, 'front_page_hero_video', array(
 		'label'		=> 'Upload Hero Video',
+		'mime_type'	=> 'video',
 		'section'	=> 'static_front_page',
 		'settings'	=> 'front_page_hero_video'
 	) ));

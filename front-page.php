@@ -13,7 +13,7 @@
         </div>
     </div>
     <video class="video-hero" poster="<?php echo get_theme_mod("front_page_hero_image"); ?>"  autoplay muted loop>
-        <source src="<?php echo get_theme_mod("front_page_hero_video"); ?>" type="video/mp4">
+        <source src="<?php echo wp_get_attachment_url(get_theme_mod("front_page_hero_video")); ?>" type="video/mp4">
     </video>
 </div>
 <!-- Pathways -->
