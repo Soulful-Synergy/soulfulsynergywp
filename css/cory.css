@@ -266,6 +266,7 @@ div#events h1 {
 .header h1,
 .issue-card h1 {
     font-size: 1.5rem;
+    margin: 0 20px;
 }
 
 .why-soulful-synergy .header,
@@ -429,7 +430,7 @@ button.subButton.open {
 @media (max-width: 768px) {
     nav#mobile-nav.open {
         visibility: visible;
-        height: 235px;
+        height: 100%;
     }
 
     nav#mobile-nav div.mobile-nav {
@@ -477,6 +478,7 @@ button.subButton.open {
         background-color: #1a1e1f;
         text-align: center;
         align-items: center;
+        z-index: 9999;
     }
     div#mobile-bottom-nav a {
         display: flex;
