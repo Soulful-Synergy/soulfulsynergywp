@@ -17,12 +17,15 @@
             <div class="footer-subscribe">
                 <p>Subscribe to Our Newsletter</p>
                 <div class="center-align">
-                    <input
-                        type="email"
-                        name="subscriber-email"
-                        placeholder="Email"
-                    />
-                    <button>Subscribe</button>
+                    <form action="https://docs.google.com/forms/d/e/1FAIpQLSdlN1qEEPRzLMKD5mK5EL_eidT3qMTQtonv2-w2bZqMmtTaBw/viewform?usp=pp_url" method="GET" target="_blank">
+                        <input
+                            type="email"
+                            name="entry.372396029"
+                            placeholder="Email"
+                            required
+                        />
+                        <button type="submit">Subscribe</button>
+                    </form>
                 </div>
             </div>
             <div class="footer-links">
