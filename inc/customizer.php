@@ -466,12 +466,20 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 
 	 for($i = 1; $i < 7; $i++) {
 		$wp_customize->add_setting('about_image_'.$i);
+		$wp_customize->add_setting('about_caption_'.$i);
 
 		$wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'about_image_'.$i, array(
 			'label'		=> 'Upload About Image '.$i,
 			'section'	=> 'about',
 			'settings'	=> 'about_image_'.$i
 		) ));
+
+		$wp_customize->add_control( 'about_caption_'.$i, array(
+			'type'		 => 'text',
+			'section'	 => 'about',
+		   	'label'		 => 'Caption for About Image '.$i,
+		   	'description'=> ''
+		) );
 	 }
 
 	// Awards Banners

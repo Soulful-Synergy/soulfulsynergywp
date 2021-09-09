@@ -184,14 +184,14 @@
         <div id="about-photo-1" class="single-photo">
             <a
                 href="<?php echo get_theme_mod('about_image_1'); ?>"
-                data-lightbox="about-lightbox-strip-1"
+                data-lightbox="about-lightbox-strip-1" data-title="<?php echo get_theme_mod('about_caption_1');?>"
                 ><img src="<?php echo get_theme_mod('about_image_1'); ?>" alt=""
             /></a>
         </div>
         <div id="about-photo-2" class="single-photo">
             <a
                 href="<?php echo get_theme_mod('about_image_2'); ?>"
-                data-lightbox="about-lightbox-strip-1"
+                data-lightbox="about-lightbox-strip-1" data-title="<?php echo get_theme_mod('about_caption_2');?>"
                 ><img src="<?php echo get_theme_mod('about_image_2'); ?>" alt=""
             /></a>
         </div>
@@ -199,7 +199,7 @@
         <div id="about-photo-3" class="single-photo">
             <a
                 href="<?php echo get_theme_mod('about_image_3'); ?>"
-                data-lightbox="about-lightbox-strip-1"
+                data-lightbox="about-lightbox-strip-1" data-title="<?php echo get_theme_mod('about_caption_3');?>"
                 ><img src="<?php echo get_theme_mod('about_image_3'); ?>" alt=""
             /></a>
         </div>
@@ -219,20 +219,20 @@
             allowfullscreen=""
             allow="autoplay; fullscreen"
         ></iframe> -->
-        <img id="about-infographic" src="<?php echo get_theme_mod('about_infographic'); ?>" alt="Infographic" style="width: 100%">
+        <img id="about-infographic" src="<?php echo get_theme_mod('about_infographic'); ?>" alt="Infographic">
     </div>
     <div class="photos-single-column">
         <div id="about-photo-4" class="single-photo">
             <a
                 href="<?php echo get_theme_mod('about_image_4'); ?>"
-                data-lightbox="about-lightbox-strip-2"
+                data-lightbox="about-lightbox-strip-2" data-title="<?php echo get_theme_mod('about_caption_4');?>"
                 ><img src="<?php echo get_theme_mod('about_image_4'); ?>" alt=""
             /></a>
         </div>
         <div id="about-photo-5" class="single-photo">
             <a
                 href="<?php echo get_theme_mod('about_image_5'); ?>"
-                data-lightbox="about-lightbox-strip-2"
+                data-lightbox="about-lightbox-strip-2" data-title="<?php echo get_theme_mod('about_caption_5');?>"
                 ><img src="<?php echo get_theme_mod('about_image_5'); ?>" alt=""
             /></a>
         </div>
@@ -240,7 +240,7 @@
         <div id="about-photo-6" class="single-photo">
             <a
                 href="<?php echo get_theme_mod('about_image_6'); ?>"
-                data-lightbox="about-lightbox-strip-2"
+                data-lightbox="about-lightbox-strip-2" data-title="<?php echo get_theme_mod('about_caption_6');?>"
                 ><img src="<?php echo get_theme_mod('about_image_6'); ?>" alt=""
             /></a>
         </div>
