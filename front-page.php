@@ -279,50 +279,62 @@ document.addEventListener('DOMContentLoaded', () => {
     .getElementById('services')
     .getElementsByClassName('set');
     services_carousel[services_set].classList.toggle('after');
+
+    const num_services = services_carousel.length;
     
     let testimonial_carousel = document
     .getElementById('testimonials')
     .getElementsByClassName('set');
     testimonial_carousel[testimonial_set].style.display = 'block';
 
+    const num_testimonials = testimonial_carousel.length;
+
     testimonial_prev_button.addEventListener('click', () => {
-        console.log('prev works');
-        if (testimonial_set != 0) {
-            let temp = testimonial_set;
+        let temp = testimonial_set;
+        if (testimonial_set - 1 >= 0) {
             testimonial_set--;
-            testimonial_carousel[temp].style.display = 'none';
-            testimonial_carousel[testimonial_set].style.display = 'block';
+        }else{
+            testimonial_set = num_testimonials - 1;
         }
+
+        testimonial_carousel[temp].style.display = 'none';
+        testimonial_carousel[testimonial_set].style.display = 'block';
     });
 
     testimonial_next_button.addEventListener('click', () => {
-        console.log('next works');
-        if (testimonial_set < 3) {
-            let temp = testimonial_set;
+        let temp = testimonial_set;
+        if (testimonial_set + 1 < num_testimonials) {
             testimonial_set++;
-            testimonial_carousel[temp].style.display = 'none';
-            testimonial_carousel[testimonial_set].style.display = 'block';
+        }else{
+            testimonial_set = 0;
         }
+
+        testimonial_carousel[temp].style.display = 'none';
+        testimonial_carousel[testimonial_set].style.display = 'block';
     });
 
     services_prev_button.addEventListener('click', () => {
-        console.log('prev serve works');
-        if (services_set != 0) {
-            let temp = services_set;
+        let temp = services_set;
+        if (services_set - 1 >= 0) {
             services_set--;
-            services_carousel[temp].classList.toggle('after');
-            services_carousel[services_set].classList.toggle('after');
+        }else{
+            services_set = num_services - 1;
         }
+
+        services_carousel[temp].classList.toggle('after');
+        services_carousel[services_set].classList.toggle('after');
     });
 
     services_next_button.addEventListener('click', () => {
-        console.log('next serve works');
-        if (services_set < 2) {
-            let temp = services_set;
+        let temp = services_set;
+        if (services_set + 1 < num_services) {
             services_set++;
-            services_carousel[temp].classList.toggle('after');
-            services_carousel[services_set].classList.toggle('after');
+        }else{
+            services_set = 0;
         }
+
+        services_carousel[temp].classList.toggle('after');
+        services_carousel[services_set].classList.toggle('after');
     });
 });
 </script>
