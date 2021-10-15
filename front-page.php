@@ -3,12 +3,10 @@
     <div class="video-tint tint">
         <div class="video-text hero-text-container">
             <h1>
-                We are a socially conscious <br />
-                consulting company.
+                <?php echo get_theme_mod('front_page_hero_intro'); ?>
             </h1>
             <h3>
-                Taking a multifaceted approach to sustainability, <br />
-                workforce and community development.
+                <?php echo get_theme_mod('front_page_hero_subtitle'); ?>
             </h3>
         </div>
     </div>
@@ -18,8 +16,8 @@
 </div>
 <!-- Pathways -->
 <div id="pathways">
-    <h1>We Help Serve</h1>
-    <p>We strive to reach as many people in our community by catering to the specific needs of different entitites. Select a pathway below to learn more about how we serve every individual.</p>
+    <h1><?php echo get_theme_mod('front_page_pathways_intro'); ?></h1>
+    <p><?php echo get_theme_mod('front_page_pathways_text'); ?></p>
     <div class="pathways-carousel">
     <?php 
         $tags = get_terms(array( 'taxonomy' => 'pathways', 'hide_empty' => false ));
@@ -46,8 +44,8 @@
 
 <!-- Services -->
 <div id="services">
-    <h1>Our Services</h1>
-    <p>Here are a few of the services we provide at Soulful Synergy. Click on the icons to find out more or select See More to visit our Services Page.</p>
+    <h1><?php echo get_theme_mod('front_page_services_intro'); ?></h1>
+    <p><?php echo get_theme_mod('front_page_services_text'); ?></p>
     <div class="homepage-services-carousel">
         <svg
             class="prev"
@@ -135,9 +133,8 @@ $metric_four = get_option('soulfulsynergy_metric_4');
 
 ?>
 <div id="impact">
-    <h1>Our Impact</h1>
-    <p>At Soulful Synergy, we believe actions speak louder than words. 
-        Here are only a few ways our actions are helping others.</p>
+    <h1><?php echo get_theme_mod('front_page_impact_intro'); ?></h1>
+    <p><?php echo get_theme_mod('front_page_impact_text'); ?></p>
     <ul>
         <li>
             <h2><span data-purecounter-start="0" data-purecounter-end="<?php echo $metric_one["value"]; ?>" class="purecounter">0</span></h2>
@@ -165,7 +162,7 @@ $metric_four = get_option('soulfulsynergy_metric_4');
 <div id="group">
     <!-- Testimonials -->
     <div id="testimonials">
-        <h1>What Our Clients Are Saying</h1>
+        <h1><?php echo get_theme_mod('front_page_testimonials_intro'); ?></h1>
         <div class="testimonials-carousel">
         <svg
             class="prev" 
@@ -219,7 +216,7 @@ $metric_four = get_option('soulfulsynergy_metric_4');
     <div class="divider"></div>
     <!-- Events -->
     <div id="events">
-        <h1>Upcoming Events</h1>
+        <h1><?php echo get_theme_mod('front_page_upcoming_events_intro'); ?></h1>
         <div class="event-calendar">
             <?php
             $empty = 0;

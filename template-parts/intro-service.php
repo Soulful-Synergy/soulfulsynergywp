@@ -1,12 +1,9 @@
 <div class="services-intro">
-    <div class="services-intro-text">
-        <h1>Our Services</h1>
+    <div id="services-intro" class="services-intro-text">
+        <h1><?php echo get_theme_mod('services_intro_title'); ?></h1>
         <p>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-        commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-        penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-        Donec quam felis.
+        <?php echo get_theme_mod('services_intro_text'); ?>
         </p>
     </div>
-    <div class="services-intro-image"></div>
+    <div class="services-intro-image" style="background-image: url('<?php echo get_theme_mod('services_intro_image'); ?>');"></div>
 </div>

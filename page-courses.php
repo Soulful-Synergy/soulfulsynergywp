@@ -100,6 +100,7 @@ get_header();
         <div class="swiper-pagination"></div>
     </div>
     <div id="courses-wrapper">
+        <h1 style="font-size: 2rem; text-align: center; margin: 8px auto;">All Courses</h1>
         <?php
         function getIsChecked($term) {
             if(isset($_GET['category'])) {

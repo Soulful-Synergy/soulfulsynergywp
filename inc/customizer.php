@@ -29,6 +29,145 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 		'settings'	=> 'front_page_hero_video'
 	) ));
 
+	$wp_customize->add_setting('front_page_hero_intro');
+
+	$wp_customize->add_control( 'front_page_hero_intro', array( 
+		'type'			=> 'text',
+		'section'		=> 'static_front_page',
+		'label'			=> 'Homepage Hero Title',
+		'description'	=> ''
+	) );
+
+	$wp_customize->selective_refresh->add_partial(
+		'front_page_hero_intro',
+		array(
+			"selector" => "#homepage-hero .tint .hero-text-container h1"
+		)
+	);
+	
+	$wp_customize->add_setting('front_page_hero_subtitle');
+	
+	$wp_customize->add_control( 'front_page_hero_subtitle', array( 
+		'type'			=> 'textarea',
+		'section'		=> 'static_front_page',
+		'label'			=> 'Homepage Hero Sub-Title',
+		'description'	=> ''
+	) );
+	
+	$wp_customize->selective_refresh->add_partial(
+		'front_page_hero_intro',
+		array(
+			"selector" => "#homepage-hero .tint .hero-text-container h3"
+		)
+	);
+	
+	$wp_customize->add_setting('front_page_pathways_intro');
+
+	$wp_customize->add_control( 'front_page_pathways_intro', array( 
+		'type'			=> 'text',
+		'section'		=> 'static_front_page',
+		'label'			=> 'Homepage Pathways Title',
+		'description'	=> ''
+	) );
+	
+	$wp_customize->selective_refresh->add_partial(
+		'front_page_pathways_intro',
+		array(
+			"selector" => "#pathways h1"
+		)
+	);
+
+	$wp_customize->add_setting('front_page_pathways_text');
+	
+	$wp_customize->add_control( 'front_page_pathways_text', array( 
+		'type'			=> 'textarea',
+		'section'		=> 'static_front_page',
+		'label'			=> 'Homepage Pathways Text',
+		'description'	=> ''
+	) );
+		
+	$wp_customize->add_setting('front_page_services_intro');
+
+	$wp_customize->add_control( 'front_page_services_intro', array( 
+		'type'			=> 'text',
+		'section'		=> 'static_front_page',
+		'label'			=> 'Homepage Services Title',
+		'description'	=> ''
+	) );
+	
+	$wp_customize->selective_refresh->add_partial(
+		'front_page_services_intro',
+		array(
+			"selector" => "#services h1"
+		)
+	);
+
+	$wp_customize->add_setting('front_page_services_text');
+	
+	$wp_customize->add_control( 'front_page_services_text', array( 
+		'type'			=> 'textarea',
+		'section'		=> 'static_front_page',
+		'label'			=> 'Homepage Services Text',
+		'description'	=> ''
+	) );
+
+	$wp_customize->add_setting('front_page_impact_intro');
+
+	$wp_customize->add_control( 'front_page_impact_intro', array( 
+		'type'			=> 'text',
+		'section'		=> 'static_front_page',
+		'label'			=> 'Homepage Impact Title',
+		'description'	=> ''
+	) );
+
+	$wp_customize->selective_refresh->add_partial(
+		'front_page_impact_intro',
+		array(
+			"selector" => "#impact h1"
+		)
+	);
+	
+	$wp_customize->add_setting('front_page_impact_text');
+	
+	$wp_customize->add_control( 'front_page_impact_text', array( 
+		'type'			=> 'textarea',
+		'section'		=> 'static_front_page',
+		'label'			=> 'Homepage Impact Text',
+		'description'	=> ''
+	) );
+
+	$wp_customize->add_setting('front_page_testimonials_intro');
+
+	$wp_customize->add_control( 'front_page_testimonials_intro', array( 
+		'type'			=> 'text',
+		'section'		=> 'static_front_page',
+		'label'			=> 'Homepage Testimonials Title',
+		'description'	=> ''
+	) );
+
+	$wp_customize->selective_refresh->add_partial(
+		'front_page_testimonials_intro',
+		array(
+			"selector" => "#testimonials h1"
+		)
+	);
+	
+	$wp_customize->add_setting('front_page_upcoming_events_intro');
+
+	$wp_customize->add_control( 'front_page_upcoming_events_intro', array( 
+		'type'			=> 'text',
+		'section'		=> 'static_front_page',
+		'label'			=> 'Homepage Upcoming Events Title',
+		'description'	=> ''
+	) );
+
+	$wp_customize->selective_refresh->add_partial(
+		'front_page_upcoming_events_intro',
+		array(
+			"selector" => "#events h1"
+		)
+	);
+
 	// Register Events Settings
 	for($i = 1; $i < 5; $i++) {
 		$wp_customize->add_setting('event_'.$i.'_title');
@@ -148,6 +287,37 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 		'description'	=> ''
 	 ) );
 
+	// Register Services Page Section
+	$wp_customize->add_section('services', array(
+		'title'			=> 'Services Page',
+		'description'	=> '',
+		'priority'		=> '120',
+	));
+
+	$wp_customize->add_setting('services_intro_title');
+	$wp_customize->add_setting('services_intro_text');
+	$wp_customize->add_setting('services_intro_image');
+	
+	$wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'front_page_hero_image', array(
+		'label'		=> 'Upload Hero Image',
+		'section'	=> 'services',
+		'settings'	=> 'services_intro_image'
+	) ));
+
+	$wp_customize->add_control( 'services_intro_title', array( 
+		'type'			=> 'text',
+		'section'		=> 'services',
+		'label'			=> 'Services Hero Title',
+		'description'	=> ''
+	 ) );
+
+	 $wp_customize->add_control( 'services_intro_text', array( 
+		'type'			=> 'textarea',
+		'section'		=> 'services',
+		'label'			=> 'Services Hero Text',
+		'description'	=> ''
+	 ) );
+ 
 	// Register Pathways Section for Images and Verbiage
 	$wp_customize->add_section('pathways', array(
 		'title'			=> 'Pathways',
@@ -526,21 +696,56 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 		'settings'	=> 'why_hero_image'
 	) ));
 
-	for($i = 1; $i < 4; $i++) {
+	$wp_customize->add_setting('why_page_hero_intro');
+
+	$wp_customize->add_control( 'why_page_hero_intro', array( 
+		'type'			=> 'text',
+		'section'		=> 'why',
+		'label'			=> 'Why Hero Intro',
+		'description'	=> ''
+	) );
+
+	$wp_customize->add_setting('why_page_hero_text');
+
+	$wp_customize->add_control( 'why_page_hero_text', array( 
+		'type'			=> 'text',
+		'section'		=> 'why',
+		'label'			=> 'Why Hero Text',
+		'description'	=> ''
+	) );
+
+	$wp_customize->selective_refresh->add_partial(
+		'why_page_hero_intro',
+		array(
+			'selector' => 'div#why-hero h1',
+		)
+	);
+
+	$wp_customize->selective_refresh->add_partial(
+		'why_page_hero_text',
+		array(
+			'selector' => 'div#why-hero h3',
+		)
+	);
+
+	for($i = 1; $i <= 4; $i++) {
 		$wp_customize->add_setting('why_banner_image_'.$i);
+		$wp_customize->add_setting('why_section_title_'.$i);
 		$wp_customize->add_setting('why_intro_text_'.$i);
-		$wp_customize->add_setting('why_full_text_'.$i);
-
-		$wp_customize->add_setting('why_card_image_'.$i);
-		$wp_customize->add_setting('why_card_intro_text_'.$i);
-		$wp_customize->add_setting('why_card_full_text_'.$i);
-
+		// $wp_customize->add_setting('why_full_text_'.$i);
 
 		$wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'why_banner_image_'.$i, array(
 			'label'		=> 'Upload Section '.$i.' Banner Image',
 			'section'	=> 'why',
 			'settings'	=> 'why_banner_image_'.$i
 		) ));
+
+		$wp_customize->add_control( 'why_section_title_'.$i, array( 
+			'type'			=> 'text',
+			'section'		=> 'why',
+			'label'			=> 'Section '.$i.' Title',
+			'description'	=> ''
+		) );
 
 		$wp_customize->add_control( 'why_intro_text_'.$i, array( 
 			'type'			=> 'text',
@@ -549,53 +754,12 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 			'description'	=> ''
 		) );
 
-		$wp_customize->add_control( 'why_full_text_'.$i, array( 
-			'type'			=> 'textarea',
-			'section'		=> 'why',
-			'label'			=> 'Section '.$i.' Full Text',
-			'description'	=> ''
-		) );
-
-		$wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'why_card_image_'.$i, array(
-			'label'		=> 'Upload Card '.$i.' Image',
-			'section'	=> 'why',
-			'settings'	=> 'why_card_image_'.$i
-		) ));
-
-		$wp_customize->add_control( 'why_card_intro_text_'.$i, array( 
-			'type'			=> 'text',
-			'section'		=> 'why',
-			'label'			=> 'Card '.$i.' Intro Text',
-			'description'	=> ''
-		) );
-
-		$wp_customize->add_control( 'why_card_full_text_'.$i, array( 
-			'type'			=> 'textarea',
-			'section'		=> 'why',
-			'label'			=> 'Card '.$i.' Full Text',
-			'description'	=> ''
-		) );
-
-		$wp_customize->selective_refresh->add_partial(
-			'why_card_image_'.$i,
-			array(
-				'selector' => 'div.issue-card:nth-of-type('.$i.') img',
-			)
-		);
-
-		$wp_customize->selective_refresh->add_partial(
-			'why_card_intro_text_'.$i,
-			array(
-				'selector' => 'div.issue-card:nth-of-type('.$i.') div.introduction p',
-			)
-		);
-
-		$wp_customize->selective_refresh->add_partial(
-			'why_card_full_text_'.$i,
-			array(
-				'selector' => 'div.issue-card:nth-of-type('.$i.') div.sub-body p',
-			)
-		);
+		// $wp_customize->add_control( 'why_full_text_'.$i, array( 
+		// 	'type'			=> 'textarea',
+		// 	'section'		=> 'why',
+		// 	'label'			=> 'Section '.$i.' Full Text',
+		// 	'description'	=> ''
+		// ) );
 	}
 
 	$wp_customize->selective_refresh->add_partial(
@@ -618,6 +782,34 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 			'selector' => 'div#network div.intro img',
 		)
 	);
+
+	$wp_customize->selective_refresh->add_partial(
+		'why_section_title_1',
+		array(
+			'selector' => 'div#why div.header h1',
+		)
+	);
+
+	$wp_customize->selective_refresh->add_partial(
+		'why_section_title_2',
+		array(
+			'selector' => 'div#issues div.header h1',
+		)
+	);
+
+	$wp_customize->selective_refresh->add_partial(
+		'why_section_title_3',
+		array(
+			'selector' => 'div#connections div.header h1',
+		)
+	);
+
+	$wp_customize->selective_refresh->add_partial(
+		'why_section_title_4',
+		array(
+			'selector' => 'div#network div.header h1',
+		)
+	);
 	
 	$wp_customize->selective_refresh->add_partial(
 		'why_intro_text_1',
@@ -629,104 +821,89 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 	$wp_customize->selective_refresh->add_partial(
 		'why_intro_text_2',
 		array(
-			'selector' => 'div#connections div.intro div.introduction p',
+			'selector' => 'div#issues div.intro div.introduction p',
 		)
 	);
 		
 	$wp_customize->selective_refresh->add_partial(
 		'why_intro_text_3',
 		array(
+			'selector' => 'div#connections div.intro div.introduction p',
+		)
+	);
+
+	$wp_customize->selective_refresh->add_partial(
+		'why_intro_text_4',
+		array(
 			'selector' => 'div#network div.intro div.introduction p',
 		)
 	);
 
-	$wp_customize->selective_refresh->add_partial(
-		'why_full_text_1',
-		array(
-			'selector' => 'div#why div.main-body p',
-		)
-	);
-		
-	$wp_customize->selective_refresh->add_partial(
-		'why_full_text_2',
-		array(
-			'selector' => 'div#connections div.main-body p',
-		)
-	);
-		
-	$wp_customize->selective_refresh->add_partial(
-		'why_full_text_3',
-		array(
-			'selector' => 'div#network div.main-body p',
-		)
-	);
+	// $wp_customize->add_setting('why_non-profit_intro');
+	// $wp_customize->add_setting('why_individual_intro');
+	// $wp_customize->add_setting('why_government_intro');
+	// $wp_customize->add_setting('why_business_intro');
 
+	// $wp_customize->add_setting('why_non-profit_full_text');
+	// $wp_customize->add_setting('why_individual_full_text');
+	// $wp_customize->add_setting('why_government_full_text');
+	// $wp_customize->add_setting('why_business_full_text');
 
-	$wp_customize->add_setting('why_non-profit_intro');
-	$wp_customize->add_setting('why_individual_intro');
-	$wp_customize->add_setting('why_government_intro');
-	$wp_customize->add_setting('why_business_intro');
+	// $wp_customize->add_control( 'why_non-profit_intro', array( 
+	// 	'type'			=> 'text',
+	// 	'section'		=> 'why',
+	// 	'label'			=> 'Non-Profit Intro Text',
+	// 	'description'	=> ''
+	// ) );
 
-	$wp_customize->add_setting('why_non-profit_full_text');
-	$wp_customize->add_setting('why_individual_full_text');
-	$wp_customize->add_setting('why_government_full_text');
-	$wp_customize->add_setting('why_business_full_text');
+	// $wp_customize->add_control( 'why_non-profit_full_text', array( 
+	// 	'type'			=> 'textarea',
+	// 	'section'		=> 'why',
+	// 	'label'			=> 'Non-Profit Full Text',
+	// 	'description'	=> ''
+	// ) );
 
-	$wp_customize->add_control( 'why_non-profit_intro', array( 
-		'type'			=> 'text',
-		'section'		=> 'why',
-		'label'			=> 'Non-Profit Intro Text',
-		'description'	=> ''
-	) );
+	// $wp_customize->add_control( 'why_individual_intro', array( 
+	// 	'type'			=> 'text',
+	// 	'section'		=> 'why',
+	// 	'label'			=> 'Individual Intro Text',
+	// 	'description'	=> ''
+	// ) );
 
-	$wp_customize->add_control( 'why_non-profit_full_text', array( 
-		'type'			=> 'textarea',
-		'section'		=> 'why',
-		'label'			=> 'Non-Profit Full Text',
-		'description'	=> ''
-	) );
+	// $wp_customize->add_control( 'why_individual_full_text', array( 
+	// 	'type'			=> 'textarea',
+	// 	'section'		=> 'why',
+	// 	'label'			=> 'Individual Full Text',
+	// 	'description'	=> ''
+	// ) );
 
-	$wp_customize->add_control( 'why_individual_intro', array( 
-		'type'			=> 'text',
-		'section'		=> 'why',
-		'label'			=> 'Individual Intro Text',
-		'description'	=> ''
-	) );
+	// $wp_customize->add_control( 'why_government_intro', array( 
+	// 	'type'			=> 'text',
+	// 	'section'		=> 'why',
+	// 	'label'			=> 'Government Intro Text',
+	// 	'description'	=> ''
+	// ) );
 
-	$wp_customize->add_control( 'why_individual_full_text', array( 
-		'type'			=> 'textarea',
-		'section'		=> 'why',
-		'label'			=> 'Individual Full Text',
-		'description'	=> ''
-	) );
+	// $wp_customize->add_control( 'why_government_full_text', array( 
+	// 	'type'			=> 'textarea',
+	// 	'section'		=> 'why',
+	// 	'label'			=> 'Government Full Text',
+	// 	'description'	=> ''
+	// ) );
 
-	$wp_customize->add_control( 'why_government_intro', array( 
-		'type'			=> 'text',
-		'section'		=> 'why',
-		'label'			=> 'Government Intro Text',
-		'description'	=> ''
-	) );
+	// $wp_customize->add_control( 'why_business_intro', array( 
+	// 	'type'			=> 'text',
+	// 	'section'		=> 'why',
+	// 	'label'			=> 'Business Intro Text',
+	// 	'description'	=> ''
+	// ) );
 
-	$wp_customize->add_control( 'why_government_full_text', array( 
-		'type'			=> 'textarea',
-		'section'		=> 'why',
-		'label'			=> 'Government Full Text',
-		'description'	=> ''
-	) );
-
-	$wp_customize->add_control( 'why_business_intro', array( 
-		'type'			=> 'text',
-		'section'		=> 'why',
-		'label'			=> 'Business Intro Text',
-		'description'	=> ''
-	) );
-
-	$wp_customize->add_control( 'why_business_full_text', array( 
-		'type'			=> 'textarea',
-		'section'		=> 'why',
-		'label'			=> 'Business Full Text',
-		'description'	=> ''
-	) );
+	// $wp_customize->add_control( 'why_business_full_text', array( 
+	// 	'type'			=> 'textarea',
+	// 	'section'		=> 'why',
+	// 	'label'			=> 'Business Full Text',
+	// 	'description'	=> ''
+	// ) );
 
 
 	// Underscores Code

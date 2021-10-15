@@ -2,191 +2,56 @@
 
 <div id="hero" style="background-image: url('<?php echo get_theme_mod("why_hero_image"); ?>');">
             <div class="tint">
-                <div class="hero-text-container">
-                    <h1>Our Mission</h1>
+                <div id="why-hero" class="hero-text-container">
+                    <h1><?php echo get_theme_mod("why_page_hero_intro"); ?></h1>
                     <h3>
-                        <?php echo get_theme_mod('mission_statement'); ?>
+                        <?php echo get_theme_mod('why_page_hero_text'); ?>
                     </h3>
                 </div>
             </div>
         </div>
         <div id="why" class="why-soulful-synergy">
             <div class="header">
-                <h1>Why Soulful Synergy?</h1>
+                <h1><?php echo get_theme_mod("why_section_title_1"); ?></h1>
             </div>
             <div class="intro">
                 <img src="<?php echo get_theme_mod("why_banner_image_1"); ?>" />
                 <div class="introduction">
                     <p><?php echo get_theme_mod("why_intro_text_1"); ?></p>
-                    <button class="mainOpen">Expand</button>
-                </div>
-            </div>
-            <div class="main-body">
-                <p>
-                    <?php echo get_theme_mod("why_full_text_1"); ?>
-                </p>
-                <button class="mainClose"><a href="#why">Close</a></button>
-            </div>
-        </div>
-        <div id="issues" class="why-issues">
-            <div class="header">
-                <h1>Why The Issues Matter To Us</h1>
-            </div>
-            <div class="card-holder">
-                <div class="issue-card">
-                    <h1>How we see issues</h1>
-                    <img src="<?php echo get_theme_mod("why_card_image_1"); ?>" />
-                    <div class="introduction">
-                        <p><?php echo get_theme_mod("why_card_intro_text_1"); ?></p>
-                        <button class="subButton">Expand</button>
-                    </div>
-                    <div class="sub-body">
-                        <p>
-                            <?php echo get_theme_mod("why_card_full_text_1"); ?>
-                        </p>
-                        <button class="subButton">Close</button>
-                    </div>
-                </div>
-                <div class="issue-card">
-                    <h1>Why these issues matter to us</h1>
-                    <img src="<?php echo get_theme_mod("why_card_image_2"); ?>" />
-                    <div class="introduction">
-                        <p><?php echo get_theme_mod("why_card_intro_text_2"); ?></p>
-                        <button class="subButton">Expand</button>
-                    </div>
-                    <div class="sub-body">
-                        <p>
-                            <?php echo get_theme_mod("why_card_full_text_2"); ?>
-                        </p>
-                        <button class="subButton">Close</button>
-                    </div>
-                </div>
-                <div class="issue-card">
-                    <h1>How the issues impact peoples’ lives</h1>
-                    <img src="<?php echo get_theme_mod("why_card_image_3"); ?>" />
-                    <div class="introduction">
-                        <p><?php echo get_theme_mod("why_card_intro_text_3"); ?></p>
-                        <button class="subButton">Expand</button>
-                    </div>
-                    <div class="sub-body">
-                        <p>
-                        <?php echo get_theme_mod("why_card_full_text_3"); ?>
-                        </p>
-                        <button class="subButton">Close</button>
-                    </div>
                 </div>
             </div>
         </div>
-        <div id="connections" class="why-connected">
+        <div id="issues" class="why-soulful-synergy">
             <div class="header">
-                <h1>Why These Issues are Interconnected & Intersectional</h1>
+                <h1><?php echo get_theme_mod("why_section_title_2"); ?></h1>
             </div>
             <div class="intro">
                 <img src="<?php echo get_theme_mod("why_banner_image_2"); ?>" />
                 <div class="introduction">
                     <p><?php echo get_theme_mod("why_intro_text_2"); ?></p>
-                    <button class="mainOpen">Expand</button>
                 </div>
             </div>
-            <div class="main-body">
-                <p>
-                    <?php echo get_theme_mod("why_full_text_2"); ?>
-                </p>
-                <button class="mainClose">
-                    <a href="#connections">Close</a>
-                </button>
-            </div>
         </div>
-        <div id="network" class="why-collaboration">
+        <div id="connections" class="why-soulful-synergy">
             <div class="header">
-                <h1>Why collaboration is Key to Our Success</h1>
+                <h1><?php echo get_theme_mod("why_section_title_3"); ?></h1>
             </div>
             <div class="intro">
                 <img src="<?php echo get_theme_mod("why_banner_image_3"); ?>" />
                 <div class="introduction">
                     <p><?php echo get_theme_mod("why_intro_text_3"); ?></p>
-                    <button class="mainOpen">Expand</button>
                 </div>
             </div>
-            <div class="main-body">
-                <p>
-                    <?php echo get_theme_mod("why_full_text_3"); ?>
-                </p>
-                <div class="stakeholders">
-                    <div class="collaboration-card">
-                        <div class="intro">
-                            <h1>Non-Profits</h1>
-                            <img
-                                src="<?php echo get_theme_mod("non-profit_pathways_images"); ?>"
-                            />
-                            <div class="introduction">
-                                <p><?php echo get_theme_mod("why_non-profit_intro"); ?></p>
-                                <button class="subButton">Expand</button>
-                            </div>
-                        </div>
-                        <div class="sub-body">
-                            <p>
-                                <?php echo get_theme_mod("why_non-profit_full_text"); ?>
-                            </p>
-                            <button class="subButton">Collapse</button>
-                        </div>
-                    </div>
-                    <div class="collaboration-card">
-                        <div class="intro">
-                            <h1>Individuals</h1>
-                            <img
-                                src="<?php echo get_theme_mod("individual_pathways_images"); ?>"
-                            />
-                            <div class="introduction">
-                                <p><?php echo get_theme_mod("why_individual_intro"); ?></p>
-                                <button class="subButton">Expand</button>
-                            </div>
-                        </div>
-                        <div class="sub-body">
-                            <p>
-                                <?php echo get_theme_mod("why_individual_full_text"); ?>
-                            </p>
-                            <button class="subButton">Collapse</button>
-                        </div>
-                    </div>
-                    <div class="collaboration-card">
-                        <div class="intro">
-                            <h1>Government Agencies</h1>
-                            <img
-                                src="<?php echo get_theme_mod("government_pathways_images"); ?>"
-                            />
-                            <div class="introduction">
-                                <p><?php echo get_theme_mod("why_government_intro"); ?></p>
-                                <button class="subButton">Expand</button>
-                            </div>
-                        </div>
-                        <div class="sub-body">
-                            <p>
-                                <?php echo get_theme_mod("why_government_full_text"); ?>
-                            </p>
-                            <button class="subButton">Collapse</button>
-                        </div>
-                    </div>
-                    <div class="collaboration-card">
-                        <div class="intro">
-                            <h1>For Profits</h1>
-                            <img
-                                src="<?php echo get_theme_mod("business_pathways_images"); ?>"
-                            />
-                            <div class="introduction">
-                                <p><?php echo get_theme_mod("why_business_intro"); ?></p>
-                                <button class="subButton">Expand</button>
-                            </div>
-                        </div>
-                        <div class="sub-body">
-                            <p>
-                                <?php echo get_theme_mod("why_business_full_text"); ?>
-                            </p>
-                            <button class="subButton">Collapse</button>
-                        </div>
-                    </div>
+        </div>
+        <div id="network" class="why-soulful-synergy">
+            <div class="header">
+                <h1><?php echo get_theme_mod("why_section_title_4"); ?></h1>
+            </div>
+            <div class="intro">
+                <img src="<?php echo get_theme_mod("why_banner_image_4"); ?>" />
+                <div class="introduction">
+                    <p><?php echo get_theme_mod("why_intro_text_4"); ?></p>
                 </div>
-                <button class="mainClose"><a href="#network">Close</a></button>
             </div>
         </div>
         <script>
