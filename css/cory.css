@@ -229,6 +229,7 @@ div#events h1 {
     width: 100%;
 }
 .event-calendar .box {
+    width: 100%;
     margin: 20px auto;
     height: auto;
     background-color: #1a1e1f;

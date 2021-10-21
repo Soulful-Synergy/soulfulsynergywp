@@ -675,6 +675,11 @@ footer {
     border-radius: 5px;
 }
 
+.services-body a {
+    color: #97a8d7;
+    text-decoration: underline;
+}
+
 .services-body h1 {
     font-size: 3rem;
     margin-bottom: 20px;
@@ -990,6 +995,10 @@ img#about-infographic {
     font-size: 1.3rem;
     font-weight: 600;
     text-align: center;
+}
+
+.about-award-col {
+    width: 33.3%;
 }
 
 .about-award-row {

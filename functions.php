@@ -135,13 +135,13 @@ function soulfulsynergy_scripts() {
 	
 	if(is_page('about')) {
 		wp_enqueue_style( 'soulfulsynergy-lightbox', get_template_directory_uri() . '/css/lightbox.min.css' );
-		wp_enqueue_script( 'soulfulsynergy-lightbox', get_template_directory_uri() . '/js/lightbox.min.js', array(), SOULFULSYNERGY_VERSION, false );
+		wp_enqueue_script( 'soulfulsynergy-lightbox', get_template_directory_uri() . '/js/lightbox.min.js', array(), null, false );
 	}
 
 	if(is_page('courses')) {
 		wp_enqueue_style( 'soulfulsynergy-swiper-styles', get_template_directory_uri() . '/css/swiper-bundle.min.css' );
-		wp_enqueue_script( 'soulfulsynergy-swiper-js', get_template_directory_uri() . '/js/swiper-bundle.min.js', array(), SOULFULSYNERGY_VERSION, false );
-		wp_enqueue_script( 'soulfulsynergy-micromodal', get_template_directory_uri() . '/js/micromodal.min.js', array(), SOULFULSYNERGY_VERSION, false );
+		wp_enqueue_script( 'soulfulsynergy-swiper-js', get_template_directory_uri() . '/js/swiper-bundle.min.js', array(), null, false );
+		wp_enqueue_script( 'soulfulsynergy-micromodal', get_template_directory_uri() . '/js/micromodal.min.js', array(), null, false );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -151,7 +151,7 @@ function soulfulsynergy_scripts() {
 	wp_enqueue_style( 'soulfulsynergy-core', get_template_directory_uri() . '/css/core.css' );
 	wp_enqueue_style( 'soulfulsynergy-cory', get_template_directory_uri() . '/css/cory.css' );
 	
-	wp_enqueue_script( 'soulfulsynergy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), SOULFULSYNERGY_VERSION, true );
+	wp_enqueue_script( 'soulfulsynergy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), null, true );
 	
 }
 add_action( 'wp_enqueue_scripts', 'soulfulsynergy_scripts' );
