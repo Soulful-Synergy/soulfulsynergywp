@@ -287,6 +287,22 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 		'description'	=> ''
 	 ) );
 
+	 // Register Footer Section
+	 $wp_customize->add_section('footer', array(
+		'title'			=> 'Footer',
+		'description'	=> '',
+		'priority'		=> '120',
+	));
+	
+	$wp_customize->add_setting('footer_text');
+
+	$wp_customize->add_control( 'footer_text', array( 
+		'type'			=> 'textarea',
+		'section'		=> 'footer',
+		'label'			=> 'Footer Text',
+		'description'	=> 'This will fill whitespace on larger devices'
+	 ) );
+
 	// Register Services Page Section
 	$wp_customize->add_section('services', array(
 		'title'			=> 'Services Page',
@@ -606,13 +622,22 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 		'description'	=> ''
 	 ) );
 
-	 $wp_customize->add_setting('history_image');
+	 $wp_customize->add_setting('history_image_1');
 
-	 $wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'history_image', array(
-		 'label'	=> 'Upload History Banner Image',
+	 $wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'history_image_1', array(
+		 'label'	=> 'Upload History Banner Image 1',
 		 'section'	=> 'about',
-		 'settings'	=> 'history_image'
+		 'settings'	=> 'history_image_1'
 	 ) ));
+
+	 $wp_customize->add_setting('history_image_2');
+
+	 $wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'history_image_2', array(
+		 'label'	=> 'Upload History Banner Image 2',
+		 'section'	=> 'about',
+		 'settings'	=> 'history_image_2'
+	 ) ));
+
 
 	 $wp_customize->add_setting('about_infographic');
 
@@ -839,73 +864,59 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 		)
 	);
 
-	// $wp_customize->add_setting('why_non-profit_intro');
-	// $wp_customize->add_setting('why_individual_intro');
-	// $wp_customize->add_setting('why_government_intro');
-	// $wp_customize->add_setting('why_business_intro');
+	// Register Courses Page Section
+	$wp_customize->add_section('courses', array(
+		'title'			=> 'Courses Page',
+		'description'	=> '',
+		'priority'		=> '120',
+	));
 
-	// $wp_customize->add_setting('why_non-profit_full_text');
-	// $wp_customize->add_setting('why_individual_full_text');
-	// $wp_customize->add_setting('why_government_full_text');
-	// $wp_customize->add_setting('why_business_full_text');
+	$wp_customize->add_setting('courses_intro_title');
+	$wp_customize->add_setting('courses_intro_text');
+	$wp_customize->add_setting('courses_intro_image');
+	
+	$wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'front_page_hero_image', array(
+		'label'		=> 'Upload Hero Image',
+		'section'	=> 'courses',
+		'settings'	=> 'courses_intro_image'
+	) ));
 
-	// $wp_customize->add_control( 'why_non-profit_intro', array( 
-	// 	'type'			=> 'text',
-	// 	'section'		=> 'why',
-	// 	'label'			=> 'Non-Profit Intro Text',
-	// 	'description'	=> ''
-	// ) );
+	$wp_customize->add_control( 'courses_intro_title', array( 
+		'type'			=> 'text',
+		'section'		=> 'courses',
+		'label'			=> 'Courses Hero Title',
+		'description'	=> ''
+		) );
 
-	// $wp_customize->add_control( 'why_non-profit_full_text', array( 
-	// 	'type'			=> 'textarea',
-	// 	'section'		=> 'why',
-	// 	'label'			=> 'Non-Profit Full Text',
-	// 	'description'	=> ''
-	// ) );
+	$wp_customize->add_control( 'courses_intro_text', array( 
+		'type'			=> 'textarea',
+		'section'		=> 'courses',
+		'label'			=> 'Courses Hero Text',
+		'description'	=> ''
+	) );
 
-	// $wp_customize->add_control( 'why_individual_intro', array( 
-	// 	'type'			=> 'text',
-	// 	'section'		=> 'why',
-	// 	'label'			=> 'Individual Intro Text',
-	// 	'description'	=> ''
-	// ) );
+	$wp_customize->selective_refresh->add_partial(
+		'courses_intro_image',
+		array(
+			'selector' => 'section#courses-page #hero img',
+		)
+	);
 
-	// $wp_customize->add_control( 'why_individual_full_text', array( 
-	// 	'type'			=> 'textarea',
-	// 	'section'		=> 'why',
-	// 	'label'			=> 'Individual Full Text',
-	// 	'description'	=> ''
-	// ) );
+	$wp_customize->selective_refresh->add_partial(
+		'courses_intro_title',
+		array(
+			'selector' => 'section#courses-page #hero h1',
+		)
+	);
 
-	// $wp_customize->add_control( 'why_government_intro', array( 
-	// 	'type'			=> 'text',
-	// 	'section'		=> 'why',
-	// 	'label'			=> 'Government Intro Text',
-	// 	'description'	=> ''
-	// ) );
+	$wp_customize->selective_refresh->add_partial(
+		'courses_intro_text',
+		array(
+			'selector' => 'section#courses-page #hero h3',
+		)
+	);
 
-	// $wp_customize->add_control( 'why_government_full_text', array( 
-	// 	'type'			=> 'textarea',
-	// 	'section'		=> 'why',
-	// 	'label'			=> 'Government Full Text',
-	// 	'description'	=> ''
-	// ) );
-
-	// $wp_customize->add_control( 'why_business_intro', array( 
-	// 	'type'			=> 'text',
-	// 	'section'		=> 'why',
-	// 	'label'			=> 'Business Intro Text',
-	// 	'description'	=> ''
-	// ) );
-
-	// $wp_customize->add_control( 'why_business_full_text', array( 
-	// 	'type'			=> 'textarea',
-	// 	'section'		=> 'why',
-	// 	'label'			=> 'Business Full Text',
-	// 	'description'	=> ''
-	// ) );
-
-
+	
 	// Underscores Code
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -949,7 +960,14 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->selective_refresh->add_partial('history_image',
+		$wp_customize->selective_refresh->add_partial('history_image_1',
+		array(
+				'selector'			=> '.about-history-img img',
+				'render_callback'	=> 'soulfulsynergy_customize_partial_history_image',
+			)
+		);
+
+		$wp_customize->selective_refresh->add_partial('history_image_2',
 		array(
 				'selector'			=> '.about-history-img img',
 				'render_callback'	=> 'soulfulsynergy_customize_partial_history_image',

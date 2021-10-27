@@ -249,7 +249,7 @@ $metric_four = get_option('soulfulsynergy_metric_4');
             }
             ?>
         </div>
-        <a class="btn" href="<?php echo get_theme_mod("events_calendar"); ?>" target="_blank">All Events</a>
+        <a class="btn" href="<?php echo get_theme_mod("event_calendar_link"); ?>" target="_blank">All Events</a>
     </div>
 </div>
 <script>

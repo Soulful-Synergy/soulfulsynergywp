@@ -90,8 +90,10 @@
     <div class="about-history">
         <div class="about-history-img">
             <img
-                src="<?php echo get_theme_mod("history_image"); ?>"
-                alt="A group of people holding their certifications"
+                src="<?php echo get_theme_mod("history_image_1"); ?>"
+            />
+            <img
+                src="<?php echo get_theme_mod("history_image_2"); ?>"
             />
         </div>
 

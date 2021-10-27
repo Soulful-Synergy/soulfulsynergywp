@@ -47,6 +47,9 @@
                 </div>
             </div>
         </div>
+        <div class="footer-section" style="display: flex; justify-content: start; align-items: center; width: 33%;">
+            <p><?php echo get_theme_mod("footer_text"); ?></p>
+        </div>
         <div class="footer-section">
             <div class="footer-icons">
                 <div class="footer-icon">

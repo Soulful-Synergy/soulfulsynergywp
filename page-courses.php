@@ -2,14 +2,14 @@
 get_header();
 ?>
 <section id="courses-page">
-    <div id="hero" style="background-image: url('<?php echo get_theme_mod("front_page_hero_image"); ?>');">
+    <div id="hero" style="background-image: url('<?php echo get_theme_mod("courses_intro_image"); ?>');">
         <div class="tint">
             <div class="hero-text-container">
                 <h1>
-                    Our Courses
+                    <?php echo get_theme_mod('courses_intro_title'); ?>
                 </h1>
                 <h3>
-                    Take a look at some of the courses we are offering.
+                    <?php echo get_theme_mod('courses_intro_text'); ?>
                 </h3>
             </div>
         </div>
