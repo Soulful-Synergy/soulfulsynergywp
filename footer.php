@@ -53,7 +53,7 @@
         <div class="footer-section">
             <div class="footer-icons">
                 <div class="footer-icon">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/mwbe.png" alt="" />
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/mwbe.jpeg" alt="" />
                 </div>
                 <div class="footer-icon">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png" alt="" />

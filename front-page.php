@@ -19,25 +19,30 @@
     <h1><?php echo get_theme_mod('front_page_pathways_intro'); ?></h1>
     <p><?php echo get_theme_mod('front_page_pathways_text'); ?></p>
     <div class="pathways-carousel">
-    <?php 
-        $tags = get_terms(array( 'taxonomy' => 'pathways', 'hide_empty' => false ));
-
-        if( empty( $tags ) ) {
-            echo "No Pathways Found.";
-        } else {
-            foreach( $tags as $tag ) {
-                ?>
-                <div class="box">
-                    <a class="pathways-links" href="/pathways/<?php echo $tag->slug ?>">
-                        <img src="<?php echo get_theme_mod(strtolower($tag->slug.'_pathways_images')); ?>" width="70" height="70">
-                        <?php echo $tag->name; ?>
-                    </a>
-                </div>
-                <?php
-            }
-        }
-
-    ?>
+        <div class="box">
+            <a class="pathways-links" href="/pathways/individual">
+                <img src="<?php echo get_theme_mod(strtolower('individual_pathways_images')); ?>" width="70" height="70">
+                Individuals
+            </a>
+        </div>
+        <div class="box">
+            <a class="pathways-links" href="/pathways/business">
+                <img src="<?php echo get_theme_mod(strtolower('business_pathways_images')); ?>" width="70" height="70">
+                For Profits
+            </a>
+        </div>
+        <div class="box">
+            <a class="pathways-links" href="/pathways/government">
+                <img src="<?php echo get_theme_mod(strtolower('government_pathways_images')); ?>" width="70" height="70">
+                Government Agencies
+            </a>
+        </div>
+        <div class="box">
+            <a class="pathways-links" href="/pathways/non-profit">
+                <img src="<?php echo get_theme_mod(strtolower('non-profit_pathways_images')); ?>" width="70" height="70">
+                Non-Profits
+            </a>
+        </div>
     </div>
 </div>
 

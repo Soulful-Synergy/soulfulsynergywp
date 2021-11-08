@@ -46,7 +46,7 @@
             </div>
         </div>
     </a>
-    <div class="about-hero">
+    <div class="about-hero" id="anchor-mission" style="background-image: url('<?php echo get_theme_mod("about_intro_image"); ?>');">
         <div class="tint-75 flex-center-v-h flex-col">
             <div class="flex-center-v-h flex-col">
                 <div class="about-hero-weare">WE ARE</div>
@@ -63,11 +63,11 @@
                 <!-- prettier-ignore -->
                 <a class="about-hero-btn" href="#anchor-team">OUR TEAM</a>
                 <!-- prettier-ignore -->
-                <a class="about-hero-btn" href="#anchor-ecosystem">OUR ECOSYSTEM</a>
+                <a class="about-hero-btn" href="#anchor-ecosystem">OUR CLIENTS & PARTNERS</a>
             </div>
         </div>
     </div>
-    <div class="about-mission" id="anchor-mission">
+    <div class="about-mission" id="anchor-history">
         <div class="flex-center-v-h flex-col">
             <div class="about-mission-leaves-top">
                 <!-- prettier-ignore -->
@@ -82,7 +82,7 @@
             </div>
         </div>
     </div>
-    <div class="about-section-header" id="anchor-history">
+    <div class="about-section-header">
         <div class="flex-center-v-h">
             <h1>OUR HISTORY</h1>
         </div>
@@ -107,7 +107,7 @@
         </div>
     </div>
     <div id="award-strip-1" class="about-award-strip">
-        <div class="about-award-col">
+        <div id="anchor-team" class="about-award-col">
             <div class="about-award-row"><?php echo get_theme_mod("award_1_row1_col1"); ?></div>
             <div class="about-award-row"><?php echo get_theme_mod("award_1_row2_col1"); ?></div>
         </div>
@@ -123,7 +123,7 @@
         </div>
     </div>
     <div class="about-section-header">
-        <div id="anchor-team" class="flex-center-v-h">
+        <div class="flex-center-v-h">
             <h1>OUR TEAM</h1>
         </div>
     </div>
@@ -179,7 +179,7 @@
             </div>
         </div>
     </div>
-    <div class="photos-single-column">
+    <div class="photos-single-column" id="anchor-ecosystem">
         <div id="about-photo-1" class="single-photo">
             <a
                 href="<?php echo get_theme_mod('about_image_1'); ?>"
@@ -202,7 +202,7 @@
             /></a>
         </div>
     </div>
-    <div class="about-section-header" id="anchor-ecosystem">
+    <div class="about-section-header">
         <div class="flex-center-v-h">
             <h1>OUR ECOSYSTEM</h1>
         </div>
@@ -262,7 +262,7 @@
     </div>
     <div class="about-section-header">
         <div class="flex-center-v-h">
-            <h1>OUR PARTNERS</h1>
+            <h1>OUR CLIENTS & PARTNERS</h1>
         </div>
     </div>
     <div class="about-partners">

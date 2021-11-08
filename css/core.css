@@ -852,7 +852,6 @@ horizontal scrolling in the mobile view */
 }
 
 .about-hero {
-    background-image: url('../img/about/sitting-table.jpg');
     background-size: cover;
     display: flex;
     align-items: center;

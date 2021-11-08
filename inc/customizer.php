@@ -520,7 +520,7 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('government_pathways_images');
 
-	$wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'governmentpathways_images', array(
+	$wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'government_pathways_images', array(
 		'label'		=> 'Upload Government Pathway Image',
 		'section'	=> 'pathways',
 		'settings'	=> 'government_pathways_images'
@@ -583,6 +583,14 @@ function soulfulsynergy_customize_register( $wp_customize ) {
 		'description'	=> '',
 		'priority'		=> '120',
 	));
+
+	$wp_customize->add_setting('about_intro_image');
+	
+	$wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'about_intro_image', array(
+		'label'		=> 'About Page Hero Image',
+		'section'	=> 'about',
+		'settings'	=> 'about_intro_image'
+	) ));
 
 	$wp_customize->add_setting( 'about_subtitle', array( 
 		'capability'	=> 'edit_theme_options',
