@@ -192,11 +192,15 @@ nav {
 }
 
 .main-nav a:nth-of-type(4) {
-    margin-right: 50px;
+    margin-right: 10%;
 }
 
 .main-nav a:nth-of-type(5) {
-    margin-left: 50px;
+    margin-left: 0;
+}
+
+.main-nav a:nth-of-type(7) {
+    margin-right: 5%;
 }
 
 div#main-nav nav div a {

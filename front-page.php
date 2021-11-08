@@ -26,6 +26,12 @@
             </a>
         </div>
         <div class="box">
+            <a class="pathways-links" href="/pathways/non-profit">
+                <img src="<?php echo get_theme_mod(strtolower('non-profit_pathways_images')); ?>" width="70" height="70">
+                Non-Profits
+            </a>
+        </div>
+        <div class="box">
             <a class="pathways-links" href="/pathways/business">
                 <img src="<?php echo get_theme_mod(strtolower('business_pathways_images')); ?>" width="70" height="70">
                 For Profits
@@ -35,12 +41,6 @@
             <a class="pathways-links" href="/pathways/government">
                 <img src="<?php echo get_theme_mod(strtolower('government_pathways_images')); ?>" width="70" height="70">
                 Government Agencies
-            </a>
-        </div>
-        <div class="box">
-            <a class="pathways-links" href="/pathways/non-profit">
-                <img src="<?php echo get_theme_mod(strtolower('non-profit_pathways_images')); ?>" width="70" height="70">
-                Non-Profits
             </a>
         </div>
     </div>
